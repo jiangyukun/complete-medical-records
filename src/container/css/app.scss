@@ -1,0 +1,101 @@
+.star-icon {
+    display: inline-block;
+    background-image: url("../../../img/star-1.svg");
+    background-size: cover;
+    width: 1.4rem;
+    height: 1.4rem;
+}
+
+.content-wrap {
+    margin-top: 2rem;
+    margin-bottom: 5rem;
+}
+
+.icon-nav {
+    width: 6.4rem;
+    text-align: center;
+    position: relative;
+}
+
+.profile-icon {
+    width: 6.4rem;
+    text-align: center;
+    position: relative;
+}
+
+.vertical-line {
+    position: absolute;
+    border-left: 1px solid #e0e0e0;
+    left: 3.2rem;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
+}
+
+.right-item-content {
+    flex: 1;
+    border-bottom: 1px solid #e0e0e0;
+
+    > header {
+        color: #3c4747;
+    }
+
+    .content-item {
+        font-size: 13px;
+        color: #8a94a6;
+        > header {
+            padding: 1.2rem 0 1.4rem 0;
+            color: #3c4747;
+        }
+        &:first-of-type {
+            padding: 2.1rem 0 1.4rem 0;
+        }
+        padding-bottom: 1.4rem;
+        &:not(:last-child) {
+            border-bottom: solid 1px #e0e0e0;
+        }
+    }
+}
+
+.item-padding {
+    padding-top: 2.6rem;
+}
+
+.profile-for-reference-only {
+    position: relative;
+    display: flex;
+    .star-icon-container {
+        width: 6.4rem;
+        margin-top: 2rem;
+        text-align: center;
+    }
+
+    .for-reference-only {
+        flex: 1;
+        font-size: 12px;
+        padding: 2rem 0;
+        line-height: 1.42;
+        color: #3c4747;
+    }
+}
+
+.footer-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-radius: 1px;
+    background-color: #f8f9f9;
+    .basic-info, .treat-situation, .obstetric-check, .analysis-result {
+        line-height: 1.4;
+        float: left;
+        width: 25%;
+        padding: 1.4rem 1rem 1.7rem;
+        font-size: 15px;
+        text-align: center;
+        opacity: 0.5;
+        &.active {
+            opacity: 1;
+        }
+    }
+}
