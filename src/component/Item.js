@@ -9,13 +9,23 @@ class Item extends React.Component {
   render() {
     return (
       <section className={classnames('flex relative', this.props.className)}>
-        <div className="vertical-line"></div>
+        {
+          this.props.verticalLine && (
+            <div className="vertical-line"></div>
+          )
+        }
         {this.props.children}
       </section>
     )
   }
 }
 
-Item.propTypes = {}
+Item.defaultProps = {
+  verticalLine: true
+}
+
+Item.propTypes = {
+  verticalLine: React.PropTypes.bool
+}
 
 export default Item

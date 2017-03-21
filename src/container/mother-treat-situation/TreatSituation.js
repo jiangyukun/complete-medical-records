@@ -3,11 +3,11 @@
  */
 import React from 'react'
 
+import '../css/liver-protection-medicine.scss'
 import AntiVirusMedicine from './treat/AntiVirusMedicine'
 import LiverProtectionMedicine from './treat/LiverProtectionMedicine'
 import MedicineUntowardEffect from './treat/MedicineUntowardEffect'
 import ForReferenceOnly from '../ForReferenceOnly'
-import '../css/liver-protection-medicine.scss'
 
 class TreatSituation extends React.Component {
 

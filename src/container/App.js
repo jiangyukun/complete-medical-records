@@ -4,15 +4,15 @@
 import React from 'react'
 import classnames from 'classnames'
 
-import BasicInfo from './mother/BasicInfo'
-import ObstetricExamination from './mother/ObstetricExamination'
-import TreatSituation from './mother/TreatSituation'
-
 import './css/app.scss'
+import BasicInfo from './mother-basic-info/BasicInfo'
+import ObstetricExamination from './mother-obstetric-examination/ObstetricExamination'
+import TreatSituation from './mother-treat-situation/TreatSituation'
+import AnalysisResult from './mother-analysis-result/AnalysisResult'
 
 class App extends React.Component {
   state = {
-    current: 2
+    current: 1
   }
 
   render() {
@@ -31,6 +31,11 @@ class App extends React.Component {
         {
           this.state.current == 3 && (
             <ObstetricExamination/>
+          )
+        }
+        {
+          this.state.current == 4 && (
+            <AnalysisResult/>
           )
         }
         <footer className="footer-nav">

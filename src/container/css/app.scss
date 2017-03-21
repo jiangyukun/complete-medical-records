@@ -6,6 +6,22 @@
     height: 1.4rem;
 }
 
+.plus-icon {
+    display: inline-block;
+    background-image: url("../../../img/18.svg");
+    background-size: cover;
+    width: 1.8rem;
+    height: 1.8rem;
+}
+
+.minus-icon {
+    display: inline-block;
+    background-image: url("../../../img/19.svg");
+    background-size: cover;
+    width: 1.8rem;
+    height: 1.8rem;
+}
+
 .content-wrap {
     margin-top: 2rem;
     margin-bottom: 5rem;
@@ -29,12 +45,15 @@
     left: 3.2rem;
     top: 0;
     bottom: 0;
-    z-index: -1;
+    z-index: 0;
 }
 
 .right-item-content {
     flex: 1;
     border-bottom: 1px solid #e0e0e0;
+    &.no-border {
+        border-bottom: none;
+    }
 
     > header {
         color: #3c4747;
@@ -48,7 +67,7 @@
             color: #3c4747;
         }
         &:first-of-type {
-            padding: 2.1rem 0 1.4rem 0;
+            padding: 0.9rem 0 1.4rem 0;
         }
         padding-bottom: 1.4rem;
         &:not(:last-child) {
@@ -68,6 +87,7 @@
         width: 6.4rem;
         margin-top: 2rem;
         text-align: center;
+        z-index: 1;
     }
 
     .for-reference-only {
@@ -84,6 +104,7 @@
     bottom: 0;
     left: 0;
     right: 0;
+    z-index: 1;
     border-radius: 1px;
     background-color: #f8f9f9;
     .basic-info, .treat-situation, .obstetric-check, .analysis-result {

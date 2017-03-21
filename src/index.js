@@ -7,9 +7,7 @@ import {createStore, applyMiddleware} from 'redux'
 import saga from 'redux-saga'
 
 import Root from './container/Root'
-
 import allReducers from './reducer/'
-
 import './common.scss'
 
 let store = createStore(allReducers, {}, applyMiddleware(saga))
