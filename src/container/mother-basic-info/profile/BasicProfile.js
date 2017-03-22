@@ -6,6 +6,8 @@ import React from 'react'
 class BasicProfile extends React.Component {
 
   render() {
+    const {motherBasicInfo} = this.props
+    const baseInfo = motherBasicInfo['baseInfo']
     return (
       <section className="profile-basic">
         <div className="profile-icon">
@@ -17,20 +19,24 @@ class BasicProfile extends React.Component {
           <div className="profile-items">
             <div className="flex">
               <div className="flex1">
-                <span>姓名：沙发</span>
+                <span>姓名：{baseInfo['real_Name']}</span>
               </div>
               <div className="flex1">
-                <span className="profile-item-monitory">民族：汉族</span>
+                <span className="profile-item-monitory">民族：{baseInfo['nation']}</span>
               </div>
             </div>
             <div className="mt-7">
-              <span>出生日期：1990-01-01</span>
+              <span>出生日期：{baseInfo['birth_Date']}</span>
             </div>
           </div>
         </div>
       </section>
     )
   }
+}
+
+BasicProfile.propTypes = {
+  motherBasicInfo: React.PropTypes.object
 }
 
 export default BasicProfile

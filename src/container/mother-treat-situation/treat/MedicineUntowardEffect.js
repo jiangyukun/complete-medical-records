@@ -14,37 +14,33 @@ class MedicineUntowardEffect extends React.Component {
         <IconNav iconClassName="liver-icon-3"/>
         <ItemContent>
           <header>药物相关不良反应记录</header>
-          <div className="content-item">
-            <div>不良反应名称： 恶心</div>
-            <div className="mt-7">反应时间： 2017-01-28 ~ 2017-02-03</div>
-            <div className="flex mt-7">
-              <div className="flex1">
-                <span>程度： 危及生命</span>
-              </div>
-              <div className="flex1">
-                <span>结局： 痊愈</span>
-              </div>
-            </div>
-            <div className="mt-7">措施： 住院治疗或者延长住院治疗</div>
-          </div>
-
-          <div className="content-item">
-            <div className="mt-7">不良反应名称： 恶心</div>
-            <div className="mt-7">反应时间： 2017-01-28 ~ 2017-02-03</div>
-            <div className="flex mt-7">
-              <div className="flex1">
-                <span>程度： 危及生命</span>
-              </div>
-              <div className="flex1">
-                <span>结局： 痊愈</span>
-              </div>
-            </div>
-            <div className="mt-7">措施： 住院治疗或者延长住院治疗</div>
-          </div>
+          {
+            this.props.medicineUntowardEffect.map((untowardEffect, index) => {
+              return (
+                <div className="content-item">
+                  <div>不良反应名称： 恶心</div>
+                  <div className="mt-7">反应时间： 2017-01-28 ~ 2017-02-03</div>
+                  <div className="flex mt-7">
+                    <div className="flex1">
+                      <span>程度： 危及生命</span>
+                    </div>
+                    <div className="flex1">
+                      <span>结局： 痊愈</span>
+                    </div>
+                  </div>
+                  <div className="mt-7">措施： 住院治疗或者延长住院治疗</div>
+                </div>
+              )
+            })
+          }
         </ItemContent>
       </Item>
     )
   }
+}
+
+MedicineUntowardEffect.propTypes = {
+  medicineUntowardEffect: React.PropTypes.array
 }
 
 export default MedicineUntowardEffect

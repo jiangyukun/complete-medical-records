@@ -12,7 +12,7 @@ import AnalysisResult from './mother-analysis-result/AnalysisResult'
 
 class App extends React.Component {
   state = {
-    current: 1
+    current: 4
   }
 
   render() {

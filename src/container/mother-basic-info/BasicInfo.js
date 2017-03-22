@@ -13,26 +13,34 @@ import ProfileDeliver from './profile/ProfileDeliver'
 import ProfileQueueComplete from './profile/ProfileQueueComplete'
 import ForReferenceOnly from '../ForReferenceOnly'
 
-// import {} from './action'
+import {fetchBasicInfo} from './basic-info'
 
 class BasicInfo extends React.Component {
+
+  componentDidMount() {
+    this.props.fetchBasicInfo()
+  }
 
   render() {
     return (
       <div className="content-wrap">
-        <BasicProfile/>
-        <ProfileHepatitisB/>
-        <ProfilePregnant/>
-        <ProfileDeliver/>
-        <ProfileQueueComplete/>
-        <ForReferenceOnly/>
+        <BasicProfile motherBasicInfo={this.props.motherBasicInfo}/>
+        <ProfileHepatitisB motherBasicInfo={this.props.motherBasicInfo}/>
+        <ProfilePregnant motherBasicInfo={this.props.motherBasicInfo}/>
+        <ProfileDeliver motherBasicInfo={this.props.motherBasicInfo}/>
+        <ProfileQueueComplete motherBasicInfo={this.props.motherBasicInfo}/>
+        <ForReferenceOnly motherBasicInfo={this.props.motherBasicInfo}/>
       </div>
     )
   }
 }
 
 function mapStateToProps(state) {
-  return {}
+  return {
+    motherBasicInfo: state['motherBasicInfo']
+  }
 }
 
-export default connect(mapStateToProps, {})(BasicInfo)
+export default connect(mapStateToProps, {
+  fetchBasicInfo
+})(BasicInfo)

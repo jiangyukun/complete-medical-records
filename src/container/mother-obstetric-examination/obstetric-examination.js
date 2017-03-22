@@ -4,8 +4,8 @@
 
 import {mother} from '../../constants/action-type'
 
-export function fetchBasicInfo() {
+export function fetchObstetricExamination() {
   return {
-    type: mother.FETCH_BASIC_INFO
+    type: mother.FETCH_OBSTETRIC_EXAMINATION
   }
 }

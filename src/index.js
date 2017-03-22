@@ -1,15 +1,24 @@
 /**
  * Created by jiangyukun on 2017/3/20.
  */
+import 'babel-polyfill'
 import React from 'react'
 import {render} from 'react-dom'
-import {createStore, applyMiddleware} from 'redux'
-import saga from 'redux-saga'
+import {createStore, applyMiddleware, compose} from 'redux'
+import createSagaMiddleware from 'redux-saga'
 
-import Root from './container/Root'
-import allReducers from './reducer/'
 import './common.scss'
+import Root from './container/Root'
+import DevTools from './container/devtools/DevTools'
+import rootSaga from './sagas/'
+import allReducers from './reducer/'
 
-let store = createStore(allReducers, {}, applyMiddleware(saga))
+let sagaMiddleware = createSagaMiddleware()
+let store = createStore(allReducers, {}, compose(applyMiddleware(sagaMiddleware), DevTools.instrument()))
+sagaMiddleware.run(rootSaga)
 
 render(<Root store={store}/>, document.querySelector('#root'))
+
+window.onerror = err=> {
+  alert(err)
+}

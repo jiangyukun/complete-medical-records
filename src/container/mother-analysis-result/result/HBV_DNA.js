@@ -8,6 +8,8 @@ import VerticalLine from '../../../component/VerticalLine'
 
 class HBV_DNA extends React.Component {
   render() {
+    const {hbvDnaList} = this.props
+
     return (
       <Item className="analysis-result-item" verticalLine={false}>
         <VerticalLine bottom="3.5rem"/>
@@ -17,31 +19,21 @@ class HBV_DNA extends React.Component {
         <IconNav iconClassName="analysis-result-1"/>
         <ItemContent className="no-border">
           <header>HBV-DNA检查</header>
-          <div className="content-item">
-            <header className="flex">
-              <div className="flex1">产后28周</div>
-              <div className="flex1">1.28E+06</div>
-            </header>
-            <div className="check-date">
-              <span>检查日期：2017-02-20</span>
-            </div>
-          </div>
-
-          <div className="content-item">
-            <header className="flex">
-              <div className="flex1">产后5周</div>
-              <div className="flex1">1.28E+04</div>
-            </header>
-            <div className="check-date">检查日期：2017-02-20</div>
-          </div>
-
-          <div className="content-item">
-            <header className="flex">
-              <div className="flex1">孕38周</div>
-              <div className="flex1">&lt;2.00E+02</div>
-            </header>
-            <div className="check-date">检查日期：2017-02-21</div>
-          </div>
+          {
+            hbvDnaList.map((hbvDna, index) => {
+              return (
+                <div key={index} className="content-item">
+                  <header className="flex">
+                    <div className="flex1">{hbvDna['pregnancy_States']}</div>
+                    <div className="flex1">{hbvDna['liver_HBV_DNA_Result']}</div>
+                  </header>
+                  <div className="check-date">
+                    <span>检查日期：{hbvDna['check_Liver_HBV_DNA_Date']}</span>
+                  </div>
+                </div>
+              )
+            })
+          }
         </ItemContent>
       </Item>
     )

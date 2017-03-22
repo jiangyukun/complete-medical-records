@@ -6,6 +6,8 @@ import React from 'react'
 class ProfileQueueComplete extends React.Component {
 
   render() {
+    const {motherBasicInfo} = this.props
+    const baseInfo = motherBasicInfo['baseInfo']
     return (
       <section className="profile-queue-complete">
         <div className="vertical-line"></div>
@@ -16,19 +18,23 @@ class ProfileQueueComplete extends React.Component {
           <header>队列完成情况</header>
           <div className="profile-items">
             <div>
-              <span>是否完成队列： 否</span>
+              <span>是否完成队列： {baseInfo['completed']}</span>
             </div>
             <div className="mt-7">
-              <span>没有完成队列日期： 2017-02-14</span>
+              <span>没有完成队列日期： {baseInfo['not_Completed_Date']}</span>
             </div>
             <div className="mt-7">
-              <span>没有完成队列原因： 失访</span>
+              <span>没有完成队列原因： {baseInfo['not_Completed_Reason']}</span>
             </div>
           </div>
         </div>
       </section>
     )
   }
+}
+
+ProfileQueueComplete.propTypes = {
+  motherBasicInfo: React.PropTypes.object
 }
 
 export default ProfileQueueComplete

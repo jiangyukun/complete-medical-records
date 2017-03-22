@@ -8,6 +8,8 @@ import {TableList, Head, Row, Desc, Item} from '../../../component/table-list/'
 class Part3 extends React.Component {
 
   render() {
+    const {part3} = this.props
+
     return (
       <TableList>
         <Head>
@@ -19,28 +21,36 @@ class Part3 extends React.Component {
           <Item>HBcAb</Item>
         </Head>
         {
-          ['产后28周', '产后5周', '孕38周', '检查日期'].map((item, index) => {
+          part3.map((item, index) => {
             return (
               <Row key={index}>
                 <Desc>
-                  <div className="period-name-desc">{item}</div>
-                  <div className="period-time">2017-02-20</div>
+                  <div className="period-name-desc">{item['pregnancy_States']}</div>
+                  <div className="period-time">{item['check_Date']}</div>
                 </Desc>
-                <Item>
-                  <i className="plus-icon"></i>
-                </Item>
-                <Item>
-                  <i className="minus-icon"></i>
-                </Item>
-                <Item>
-                  <i className="minus-icon"></i>
-                </Item>
-                <Item>
-                  179.23
-                </Item>
-                <Item>
-                  <i className="plus-icon"></i>
-                </Item>
+                {
+                  ['hbsAg_Result', 'hbsAb_Result', 'hbeAg_Result', 'hbeAb_Result', 'hbcAb_Result'].map(key => {
+                    return (
+                      <Item key={key}>
+                        {
+                          item[key] == '阳性' && (
+                            <i className="plus-icon"></i>
+                          )
+                        }
+                        {
+                          item[key] == '阴性' && (
+                            <i className="minus-icon"></i>
+                          )
+                        }
+                        {
+                          item[key] != '阴性' && item[key] != '阳性' && (
+                            <span>{item[key]}</span>
+                          )
+                        }
+                      </Item>
+                    )
+                  })
+                }
               </Row>
             )
           })

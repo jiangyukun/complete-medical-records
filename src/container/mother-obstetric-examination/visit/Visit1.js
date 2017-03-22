@@ -7,45 +7,46 @@ import {Item, IconNav, ItemContent} from '../../../component/'
 
 class Visit1 extends React.Component {
   render() {
+    const {visit1} =this.props
     return (
       <Item>
         <IconNav iconClassName="obstetric-icon-1"/>
         <ItemContent>
           <header className="flex">
             <div className="flex1">访视1 - 孕12~24周</div>
-            <div className="flex1">2017年9月6日</div>
+            <div className="flex1">{visit1['visit_Date']}</div>
           </header>
           <div className="content-item">
             <header>穿刺史</header>
             <div className="flex">
               <div className="flex1">
-                <span>日期： 2016-05-03</span>
+                <span>日期： {visit1['puncture_Date']}</span>
               </div>
               <div className="flex1">
-                <span>类型： 羊膜腔穿刺</span>
+                <span>类型： {visit1['puncture_Type']}</span>
               </div>
             </div>
           </div>
 
           <div className="content-item">
             <header>阴道出血</header>
-            <span>日期： 2016-04-27 ~ 2016-06-09</span>
+            <span>日期： {visit1['vaginal_Bleeding_Begin_Date']} ~ {visit1['vaginal_Bleeding_End_Date']}</span>
             <div className="mt-7">
-              <span>采取措施： 未采取任何措施</span>
+              <span>采取措施： {visit1['vaginal_Bleeding_Measure']}</span>
             </div>
             <div className="flex mt-7">
               <div className="flex1">
-                <span>性质： 先兆流产</span>
+                <span>性质： {visit1['vaginal_Bleeding_Nature']}</span>
               </div>
               <div className="flex1">
-                <span>结局： 继续妊娠</span>
+                <span>结局： {visit1['vaginal_Bleeding_Final']}</span>
               </div>
             </div>
           </div>
 
           <div className="content-item">
             <header>人工流产</header>
-            <span>末次月经日期： 2016-02-03</span>
+            <span>末次月经日期： {visit1['abortion']}</span>
           </div>
         </ItemContent>
       </Item>

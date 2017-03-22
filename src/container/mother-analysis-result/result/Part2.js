@@ -8,6 +8,8 @@ import {TableList, Head, Row, Desc, Item} from '../../../component/table-list/'
 class Part2 extends React.Component {
 
   render() {
+    const {part2} = this.props
+
     return (
       <TableList>
         <Head>
@@ -19,18 +21,18 @@ class Part2 extends React.Component {
           <Item>ALB</Item>
         </Head>
         {
-          ['产后28周', '产后5周', '孕38周', '检查日期'].map((item, index) => {
+          part2.map((item, index) => {
             return (
               <Row key={index}>
                 <Desc>
-                  <div className="period-name-desc">{item}</div>
-                  <div className="period-time">2017-02-20</div>
+                  <div className="period-name-desc">{item['pregnancy_States']}</div>
+                  <div className="period-time">{item['check_Liver_Check_Date']}</div>
                 </Desc>
-                <Item>173.29</Item>
-                <Item>173.29</Item>
-                <Item>173.29</Item>
-                <Item>173.29</Item>
-                <Item>173.29</Item>
+                <Item>{item['liver_ALT_Result']}</Item>
+                <Item>{item['liver_AST_Result']}</Item>
+                <Item>{item['liver_TBIL_Result']}</Item>
+                <Item>{item['liver_DBIL_Result']}</Item>
+                <Item>{item['liver_ALB_Result']}</Item>
               </Row>
             )
           })
