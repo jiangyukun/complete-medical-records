@@ -1,4 +1,6 @@
 
+@import "../mixins.scss";
+
 .profile-basic, .profile-hepatitis-b, .profile-pregnant, .profile-deliver, .profile-queue-complete {
     position: relative;
     display: flex;
@@ -11,7 +13,7 @@
         }
     }
     .profile-items {
-        font-size: 13px;
+        @include font-size(13px);
         margin: 1.4rem 0;
         color: #8a94a6;
     }

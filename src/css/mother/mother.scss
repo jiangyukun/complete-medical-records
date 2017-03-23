@@ -1,0 +1,22 @@
+@import "../mixins.scss";
+
+.mother {
+    @import './basic-info.scss';
+    @import './liver-protection-medicine.scss';
+    @import './analysis-result.scss';
+    @import './obstetric-examination.scss';
+    .footer-nav {
+        .basic-info, .treat-situation, .obstetric-check, .analysis-result {
+            line-height: 1.4;
+            float: left;
+            width: 25%;
+            padding: 1.4rem 1rem 1.7rem;
+            @include font-size(15px);
+            text-align: center;
+            opacity: 0.5;
+            &.active {
+                opacity: 1;
+            }
+        }
+    }
+}

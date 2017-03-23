@@ -1,0 +1,75 @@
+
+.modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 5;
+
+    .mask {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(148, 149, 153, 0.6);
+        &.open {
+            animation: mask-in 300ms ease-in-out;
+        }
+        &.close {
+            animation: mask-out 300ms ease-in-out;
+        }
+    }
+
+    .modal-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+    }
+
+    .modal-content {
+        border-radius: 4px;
+        &.open {
+            animation: slide-down 300ms ease-in-out;
+        }
+        &.close {
+            animation: slide-up 300ms ease-in-out;
+        }
+    }
+}
+
+@keyframes slide-down {
+    from {
+        transform: translateY(-200px);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes slide-up {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-200px);
+    }
+}
+
+@keyframes mask-in {
+    from {
+        background-color: rgba(148, 149, 153, 0.1);
+    }
+    to {
+        background-color: rgba(148, 149, 153, 0.6);
+    }
+}
+
+@keyframes mask-out {
+    from {
+        background-color: rgba(148, 149, 153, 0.6);
+    }
+    to {
+        background-color: rgba(148, 149, 153, 0.1);
+    }
+}

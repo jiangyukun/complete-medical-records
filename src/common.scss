@@ -1,3 +1,5 @@
+@import "./css/mixins.scss";
+
 * {
     margin: 0;
     padding: 0;
@@ -12,8 +14,21 @@ html {
     touch-action: manipulation;
 }
 
+html[data-dpr="2"] {
+    font-size: 20px;
+}
+
+html[data-dpr="3"] {
+    font-size: 30px;
+}
+
 body {
     font-size: 14px;
+    @include dpr(font-size, 14px);
+}
+
+.hidden {
+    display: none;
 }
 
 .relative {
@@ -34,4 +49,8 @@ body {
 
 .bg-white {
     background: #fff;
+}
+
+.rotate90 {
+    transform: rotate(90deg);
 }

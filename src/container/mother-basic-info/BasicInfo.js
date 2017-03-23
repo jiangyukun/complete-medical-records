@@ -5,7 +5,6 @@
 import React from 'react'
 import {connect} from 'react-redux'
 
-import '../css/basic-info.scss'
 import BasicProfile from './profile/BasicProfile'
 import ProfileHepatitisB from './profile/ProfileHepatitisB'
 import ProfilePregnant from './profile/ProfilePregnant'

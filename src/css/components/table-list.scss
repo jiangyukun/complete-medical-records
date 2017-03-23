@@ -1,13 +1,17 @@
+@import "../mixins.scss";
 
 .table-list {
     .head {
         display: flex;
-        padding: 1.1rem 2.6rem;
+        padding: 1rem 2.6rem;
         border-bottom: 1px solid #eaeef0;
+        .item {
+            color: #8a94a6;
+        }
     }
     .row {
         display: flex;
-        padding: 2.6rem 2.6rem 0.75rem;
+        padding: 2.5rem 2.6rem 0.75rem;
         &:not(:last-child) {
             border-bottom: 1px solid #eaeef0;
         }
@@ -30,7 +34,7 @@
 
     .item {
         flex: 1;
-        font-size: 13px;
+        @include font-size(13px);
         color: #616161;
         text-align: right;
     }

@@ -1,0 +1,21 @@
+@import "../mixins.scss";
+
+.baby {
+    .footer-nav {
+        .basic-info, .combined-immunization, .analysis-result {
+            line-height: 1.4;
+            float: left;
+            width: 33.3%;
+            padding: 1.4rem 1rem 1.7rem;
+            @include dpr(font-size, 15px);
+            text-align: center;
+            opacity: 0.5;
+            &.active {
+                opacity: 1;
+            }
+        }
+    }
+}
+
+@import "./baby-basic-info.scss";
+@import "./baby-combined-immunization.scss";

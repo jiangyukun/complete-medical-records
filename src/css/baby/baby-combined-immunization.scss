@@ -1,0 +1,41 @@
+@import "../mixins.scss";
+
+.baby-deliver-time {
+    display: inline-block;
+    background-image: url("../../../img/26.svg");
+    background-size: cover;
+    width: 3rem;
+    height: 3rem;
+}
+
+.first-dose-icon {
+    display: inline-block;
+    background-image: url("../../../img/a.svg");
+    background-size: cover;
+    width: 3rem;
+    height: 3rem;
+}
+
+.second-dose-icon {
+    display: inline-block;
+    background-image: url("../../../img/b.svg");
+    background-size: cover;
+    width: 3rem;
+    height: 3rem;
+}
+
+.third-dose-icon {
+    display: inline-block;
+    background-image: url("../../../img/c.svg");
+    background-size: cover;
+    width: 3rem;
+    height: 3rem;
+}
+
+.supplement-icon {
+    display: inline-block;
+    background-image: url("../../../img/2-circle.svg");
+    background-size: cover;
+    width: 3rem;
+    height: 3rem;
+}

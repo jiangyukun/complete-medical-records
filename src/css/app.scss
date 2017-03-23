@@ -1,6 +1,9 @@
+@import "./mixins.scss";
+@import "./line-chart/line-chart.scss";
+
 .star-icon {
     display: inline-block;
-    background-image: url("../../../img/star-1.svg");
+    background-image: url("../../img/star-1.svg");
     background-size: cover;
     width: 1.4rem;
     height: 1.4rem;
@@ -8,7 +11,7 @@
 
 .plus-icon {
     display: inline-block;
-    background-image: url("../../../img/18.svg");
+    background-image: url("../../img/18.svg");
     background-size: cover;
     width: 1.8rem;
     height: 1.8rem;
@@ -16,7 +19,7 @@
 
 .minus-icon {
     display: inline-block;
-    background-image: url("../../../img/19.svg");
+    background-image: url("../../img/19.svg");
     background-size: cover;
     width: 1.8rem;
     height: 1.8rem;
@@ -60,6 +63,7 @@
     }
 
     .content-item {
+        @include dpr(font-size, 13px);
         font-size: 13px;
         color: #8a94a6;
         > header {
@@ -91,8 +95,8 @@
     }
 
     .for-reference-only {
+        @include dpr(font-size, 12px);
         flex: 1;
-        font-size: 12px;
         padding: 2rem 0;
         line-height: 1.42;
         color: #3c4747;
@@ -107,16 +111,4 @@
     z-index: 1;
     border-radius: 1px;
     background-color: #f8f9f9;
-    .basic-info, .treat-situation, .obstetric-check, .analysis-result {
-        line-height: 1.4;
-        float: left;
-        width: 25%;
-        padding: 1.4rem 1rem 1.7rem;
-        font-size: 15px;
-        text-align: center;
-        opacity: 0.5;
-        &.active {
-            opacity: 1;
-        }
-    }
 }

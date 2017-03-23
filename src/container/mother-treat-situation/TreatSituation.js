@@ -4,7 +4,6 @@
 import React from 'react'
 import {connect} from 'react-redux'
 
-import '../css/liver-protection-medicine.scss'
 import AntiVirusMedicine from './treat/AntiVirusMedicine'
 import LiverProtectionMedicine from './treat/LiverProtectionMedicine'
 import MedicineUntowardEffect from './treat/MedicineUntowardEffect'

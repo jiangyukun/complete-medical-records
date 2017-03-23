@@ -9,7 +9,6 @@ module.exports = {
   devServer: {
     host: '192.168.18.112',
     hot: true,
-    reload: true,
     inline: true,
     overlay: true,
     port: 3000
@@ -24,7 +23,7 @@ module.exports = {
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': '"inline"'
     }),
-    new webpack.HotModuleReplacementPlugin(),
+    // new webpack.HotModuleReplacementPlugin(),
     new webpack.NoEmitOnErrorsPlugin()
   ],
   module: {

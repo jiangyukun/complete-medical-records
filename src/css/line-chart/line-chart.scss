@@ -1,0 +1,46 @@
+
+.line-chart-view {
+    background: #fff;
+}
+
+.line-chart-content {
+    transform: rotate(90deg) translate(0, -100%);
+    transform-origin: 0 0;
+    margin: 1.5rem;
+    width: 58rem;
+}
+
+.x-axis {
+    top: 5rem;
+}
+
+.line {
+    stroke-width: 2;
+    fill: transparent;
+    stroke: #57abfb;
+}
+
+.line-circle-outer {
+    stroke-width: 1;
+    stroke: #56b4fc;
+    fill: #fff;
+}
+
+.line-circle-inner {
+    fill: #fff;
+}
+
+.bottom-first-line-text {
+    font-size: 12px;
+    fill: #8a94a6;
+}
+
+.bottom-second-line-text {
+    font-size: 11px;
+    fill: #d4d9da;
+}
+
+.x-line {
+    stroke: #58aafb;
+    opacity: 0.15;
+}

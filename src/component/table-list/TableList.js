@@ -3,8 +3,6 @@
  */
 import React from 'react'
 
-import './table-list.scss'
-
 class TableList extends React.Component {
 
   render() {

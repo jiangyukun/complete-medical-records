@@ -5,7 +5,6 @@
 import React from 'react'
 import {connect} from 'react-redux'
 
-import '../css/obstetric-examination.scss'
 import Visit1 from './visit/Visit1'
 import Visit2 from './visit/Visit2'
 import Visit3 from './visit/Visit3'

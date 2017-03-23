@@ -4,7 +4,6 @@
 import React from 'react'
 import {connect} from 'react-redux'
 
-import '../css/analysis-result.scss'
 import HBV_DNA from './result/HBV_DNA'
 import Liver_B_Ultrasonic from './result/Liver_B_Ultrasonic'
 import Part2 from './result/Part2'
@@ -21,6 +20,8 @@ class AnalysisResult extends React.Component {
     const hbvDnaList = this.props.analysisResult['hbv_Dna_List']
     const part2 = this.props.analysisResult['liver_Result_List']
     const part3 = this.props.analysisResult['check_five_List']
+    const liverBUltrasonic = this.props.analysisResult['liver_B_List']
+
     return (
       <div className="content-wrap analysis-result-page">
         <HBV_DNA hbvDnaList={hbvDnaList}/>
@@ -30,7 +31,7 @@ class AnalysisResult extends React.Component {
         <div className="result-part-2">
           <Part3 part3={part3}/>
         </div>
-        <Liver_B_Ultrasonic/>
+        <Liver_B_Ultrasonic liverBUltrasonic={liverBUltrasonic}/>
         <ForReferenceOnly verticalLine={false} className="bg-white"/>
       </div>
     )

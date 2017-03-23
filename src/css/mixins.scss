@@ -1,0 +1,53 @@
+@mixin drp($font-size) {
+    html[data-dpr='2'] {
+        font-size: 2 * $font-size;
+    }
+    html[data-dpr='3'] {
+
+    }
+    html[data-dpr='4'] {
+
+    }
+}
+
+@mixin dpr($property,$px-values) {
+    //判断参数是不是单个数字，若是
+    @if type-of($px-values) == "number" {
+        #{$property}: $px-values;
+        [data-dpr="2"] & {
+            #{$property}: $px-values * 2;
+        }
+        [data-dpr="3"] & {
+            #{$property}: $px-values * 3;
+        }
+    }
+        //若为数组则
+    @else {
+        //新建两个空数组
+        $twodpr-values: ();
+        $threedpr-values: ();
+        //遍历多值变量
+        @each $value in $px-values {
+            $twodpr-values: append($twodpr-values, $value*2);
+            $threedpr-values: append($threedpr-values, $value*3)
+        }
+        // 返回处理后的多值变量
+        #{$property}: $px-values;
+        [data-dpr="2"] & {
+            #{$property}: $twodpr-values;
+        }
+        [data-dpr="3"] & {
+            #{$property}: $threedpr-values;
+        }
+    }
+}
+
+@mixin font-size($px-values) {
+    font-size: $px-values;
+    html[data-dpr="2"] & {
+        font-size: $px-values * 2;
+    }
+    html[data-dpr="3"] & {
+        font-size: $px-values * 3;
+    }
+}

@@ -7,7 +7,6 @@ import {Item, IconNav, ItemContent} from '../../../component/'
 
 class LiverProtectionMedicine extends React.Component {
   render() {
-    console.log(this.props.liverProtectionMedicine)
     return (
       <Item className="item-padding">
         <IconNav iconClassName="liver-icon-2"/>

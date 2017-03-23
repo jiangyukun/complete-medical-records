@@ -1,0 +1,29 @@
+@import "../mixins.scss";
+
+.obstetric-icon-1 {
+    display: inline-block;
+    background-image: url("../../../img/10.svg");
+    background-size: cover;
+    width: 3rem;
+    height: 3rem;
+}
+
+.obstetric-icon-2 {
+    display: inline-block;
+    background-image: url("../../../img/11.svg");
+    background-size: cover;
+    width: 3rem;
+    height: 3rem;
+}
+
+.obstetric-icon-3 {
+    display: inline-block;
+    background-image: url("../../../img/12.svg");
+    background-size: cover;
+    width: 3rem;
+    height: 3rem;
+}
+
+.visit-type-2, .visit-type-3 {
+    padding-top: 2.6rem;
+}

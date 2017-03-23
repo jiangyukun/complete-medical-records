@@ -8,6 +8,8 @@ import VerticalLine from '../../../component/VerticalLine'
 
 class Liver_B_Ultrasonic extends React.Component {
   render() {
+    const {liverBUltrasonic}  = this.props
+
     return (
       <Item className="analysis-result-item" verticalLine={false}>
         <div className="analysis-result-item-wrap">
@@ -18,21 +20,19 @@ class Liver_B_Ultrasonic extends React.Component {
           <IconNav iconClassName="analysis-result-2"/>
           <ItemContent>
             <header>肝脏B超</header>
-            <div className="content-item">
-              <header className="flex">
-                <div className="flex1">孕28周</div>
-                <div className="flex1">无任何临床意义异常</div>
-              </header>
-              <div>检查日期：2017-02-20</div>
-            </div>
-
-            <div className="content-item">
-              <header className="flex">
-                <div className="flex1">孕14周</div>
-                <div className="flex1">肝硬化</div>
-              </header>
-              <div>检查日期：2016-02-20</div>
-            </div>
+            {
+              liverBUltrasonic.map((item, index) => {
+                return (
+                  <div key={index} className="content-item">
+                    <header className="flex">
+                      <div className="flex1">{item['pregnancy_States']}</div>
+                      <div className="flex1">{item['clinical_Abnormalities']}</div>
+                    </header>
+                    <div>检查日期：{item['check_Liver_B_Date']}</div>
+                  </div>
+                )
+              })
+            }
           </ItemContent>
         </div>
       </Item>
