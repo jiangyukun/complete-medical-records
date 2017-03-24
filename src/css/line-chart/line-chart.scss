@@ -1,13 +1,19 @@
 
 .line-chart-view {
-    background: #fff;
+    transform: rotate(90deg) translate(0, -100%);
+    transform-origin: 0 0;
 }
 
 .line-chart-content {
-    transform: rotate(90deg) translate(0, -100%);
-    transform-origin: 0 0;
+    /*transform: rotate(90deg) ;
+    transform-origin: 0 0;*/
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     margin: 1.5rem;
-    width: 58rem;
+    background: #fff;
 }
 
 .x-axis {

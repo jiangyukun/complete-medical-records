@@ -1,0 +1,33 @@
+{
+  "status": 0,
+  "rspMsg": "操作成功",
+  "errCode": null,
+  "data": {
+    "protection_liver_vo": [
+      {
+        "drug_Common_Name": "的恩替",
+        "provided_Drug_Way": null,
+        "total_Daily_Dose": "66ml",
+        "start_Time": "2010-02-10",
+        "end_Time": "2016-12-31"
+      }
+    ],
+    "drug_reactions_vo": [],
+    "resist_virus_vo": [
+      {
+        "drug_Common_Name": "拉米夫定",
+        "provided_Drug_Way": "臀部",
+        "total_Daily_Dose": "100ml",
+        "start_Time": "2010-01-10",
+        "end_Time": "2017-03-10"
+      },
+      {
+        "drug_Common_Name": "三磷酸腺苷",
+        "provided_Drug_Way": null,
+        "total_Daily_Dose": "80ml",
+        "start_Time": "2010-01-11",
+        "end_Time": "2017-02-10"
+      }
+    ]
+  }
+}

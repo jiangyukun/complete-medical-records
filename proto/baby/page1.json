@@ -1,0 +1,19 @@
+{
+  "status": 0,
+  "rspMsg": "操作成功",
+  "errCode": null,
+  "data": {
+    "baby_Info": {
+      "weight": "3000",
+      "height": "49",
+      "head_Circumference": "39",
+      "physiological_Defect": "未知",
+      "apgar": "5",
+      "breast_Feed": "奶粉喂养",
+      "july_Weight": "未知",
+      "july_Height": "未知",
+      "july_Head_Circumference": "未知",
+      "blocking_Results": "未知"
+    }
+  }
+}

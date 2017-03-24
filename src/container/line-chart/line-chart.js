@@ -23,6 +23,8 @@ function getPeriodName(index) {
 
 export function loadD3AndDraw(container, dataList) {
   require.ensure([], require => {
+    let screenWidth = window.screen.width
+    let screenHeight = window.screen.height
     const d3 = require('d3')
     const dpr = window.devicePixelRatio
 
@@ -32,7 +34,12 @@ export function loadD3AndDraw(container, dataList) {
     const value = [150, 200, 300, 250, 120, 450]
 
     const svg = d3.select(container).append('svg')
-    svg.attr('width', width * dpr).attr('height', height * dpr).attr('viewBox', '0 0 500 300').attr('class', 'line-chart-view')
+
+    const viewBoxX = 0, viewBoxY = 0
+
+    svg.attr('width', (screenHeight - 30) * dpr).attr('height', (screenWidth - 30) * dpr)
+      .attr('viewBox', `${viewBoxX} ${viewBoxY} ${viewBoxX + 500} ${viewBoxY + 300}`)
+      .attr('class', 'line-chart-view')
 
     const scaleX = d3.scaleLinear().domain([0, 5]).range([70, width - 50])
     const scaleY = d3.scaleLinear().domain([data[1], 0]).range([10, height - 75])
@@ -44,7 +51,6 @@ export function loadD3AndDraw(container, dataList) {
       .y(y => {
         return scaleY(y)
       })
-
 
     drawBackgroundGradientColor()
     drawLines()
@@ -182,7 +188,7 @@ export function loadD3AndDraw(container, dataList) {
         .data(d3.range(10).map(d => d * 50))
         .enter()
         .append('text')
-        .attr('x', 15)
+        .attr('x', 0)
         .attr('y', d => scaleY(d))
         .attr('class', 'bottom-second-line-text')
         .text(d => '1.00E+02')

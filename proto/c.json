@@ -1,0 +1,52 @@
+{
+  "status": 0,
+  "rspMsg": "操作成功",
+  "errCode": null,
+  "data": {
+    "visitTwoVo": {
+      "visit_Type": "2",
+      "visit_Date": "2016-04-20",
+      "puncture": "是",
+      "puncture_Date": "2016-04-11",
+      "puncture_Type": "绒毛穿刺",
+      "vaginal_Bleeding": "是",
+      "vaginal_Bleeding_Begin_Date": "2016-04-10",
+      "vaginal_Bleeding_End_Date": "2016-04-10",
+      "vaginal_Bleeding_Measure": "服药",
+      "vaginal_Bleeding_Nature": "先兆流产",
+      "vaginal_Bleeding_Final": "继续妊娠",
+      "abortion": "是",
+      "abortion_Date": "2016-04-31"
+    },
+    "visitOneVo": {
+      "visit_Type": "1",
+      "visit_Date": "2016-02-05",
+      "puncture": "是",
+      "puncture_Date": "2016-02-11",
+      "puncture_Type": "脐血穿刺",
+      "vaginal_Bleeding": "是",
+      "vaginal_Bleeding_Begin_Date": "2016-01-31",
+      "vaginal_Bleeding_End_Date": "2016-01-31",
+      "vaginal_Bleeding_Measure": "服药",
+      "vaginal_Bleeding_Nature": "先兆流产",
+      "vaginal_Bleeding_Final": "继续妊娠",
+      "abortion": "暂无记录",
+      "abortion_Date": null
+    },
+    "visitThereVo": {
+      "visit_Type": "3",
+      "visit_Date": "2016-07-31",
+      "puncture": "是",
+      "puncture_Date": "2016-07-24",
+      "puncture_Type": "羊膜腔穿刺",
+      "vaginal_Bleeding": "是",
+      "vaginal_Bleeding_Begin_Date": "2016-06-31",
+      "vaginal_Bleeding_End_Date": "2016-07-01",
+      "vaginal_Bleeding_Measure": "服药",
+      "vaginal_Bleeding_Nature": "先兆早产",
+      "vaginal_Bleeding_Final": "继续妊娠",
+      "abortion": "暂无记录",
+      "abortion_Date": null
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "status": 0,
+  "rspMsg": "操作成功",
+  "errCode": null,
+  "data": {
+    "baby_Hepatitis_B_Five_List": [
+      {
+        "check_Date": "2016-08-01",
+        "week_Of_Age": "宝宝14周",
+        "hbsAg_Result": "阴性",
+        "hbcAb_Result": "阴性",
+        "hbsAb_Result": "阴性",
+        "hbeAb_Result": "阴性",
+        "hbeAg_Result": "阴性"
+      },
+      {
+        "check_Date": "2017-01-30",
+        "week_Of_Age": "宝宝周龄未知",
+        "hbsAg_Result": "阳性",
+        "hbcAb_Result": "阴性",
+        "hbsAb_Result": "阳性",
+        "hbeAb_Result": "阴性",
+        "hbeAg_Result": "阳性"
+      }
+    ],
+    "baby_HBV_List": [
+      {
+        "babay_Check_Liver_HBV_DNA_Date": null,
+        "baby_Liver_HBV_DNA_Result": null,
+        "week_Of_Age": "宝宝周龄未知"
+      }
+    ]
+  }
+}

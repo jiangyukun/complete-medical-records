@@ -26,9 +26,7 @@ class LineChartDialog extends React.Component {
   render() {
     return (
       <Modal show={this.state.show} onHide={this.close} onExited={this.props.onExited}>
-        <div className="line-chart-content">
-          <div ref={c => this._d3Container = c} style={{overflow: 'auto'}}></div>
-        </div>
+        <div className="line-chart-content" ref={c => this._d3Container = c}></div>
       </Modal>
     )
   }

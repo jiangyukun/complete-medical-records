@@ -1,0 +1,30 @@
+{
+  "status": 0,
+  "rspMsg": "操作成功",
+  "errCode": null,
+  "data": {
+    "merge_Info_Sign": true,
+    "baseInfo": {
+      "real_Name": "冯东英",
+      "nation": "其他",
+      "birth_Date": "1989-11-07",
+      "hepatitis_B_Date": "2010-01-10",
+      "infected_Family_Members": "兄弟姐妹",
+      "hepatitis_C": "是",
+      "hiv": "是",
+      "syphilis": "是",
+      "last_Menstruation_Date": "2015-05-10",
+      "expected_Time": "2016-06-01",
+      "delivery_Number": "1",
+      "survival_Number": "1",
+      "is_Children_Infected": "否",
+      "delivery_Time": "2016-05-01 09:17",
+      "delivery_Final": "活婴",
+      "delivery_Way": "剖宫产",
+      "completed": "未知",
+      "not_Completed_Date": null,
+      "not_Completed_Reason": null
+    },
+    "merge_Info": "丙肝、HIV、梅毒"
+  }
+}

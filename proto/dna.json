@@ -1,0 +1,169 @@
+{
+  "status": 0,
+  "rspMsg": "操作成功",
+  "errCode": null,
+  "data": {
+    "hbv_Dna_List": [
+      {
+        "check_Liver_HBV_DNA_Date": "2016-02-08",
+        "liver_HBV_DNA_Result": "7.67E+07",
+        "pregnancy_States": "孕后40周"
+      },
+      {
+        "check_Liver_HBV_DNA_Date": "2016-04-11",
+        "liver_HBV_DNA_Result": ">1.00E+09",
+        "pregnancy_States": "孕后49周"
+      },
+      {
+        "check_Liver_HBV_DNA_Date": "2016-07-25",
+        "liver_HBV_DNA_Result": "阴性",
+        "pregnancy_States": "产后13周"
+      },
+      {
+        "check_Liver_HBV_DNA_Date": "2016-09-25",
+        "liver_HBV_DNA_Result": "1.00E+02",
+        "pregnancy_States": "孕后72周"
+      },
+      {
+        "check_Liver_HBV_DNA_Date": "2016-11-15",
+        "liver_HBV_DNA_Result": "1.73E+07",
+        "pregnancy_States": "孕后80周"
+      },
+      {
+        "check_Liver_HBV_DNA_Date": "2017-01-31",
+        "liver_HBV_DNA_Result": "1.00E+06",
+        "pregnancy_States": "孕后91周"
+      }
+    ],
+    "check_five_List": [
+      {
+        "check_Date": "2016-02-05",
+        "pregnancy_States": "孕39周",
+        "hbsAg_Result": "阳性",
+        "hbcAb_Result": "阳性",
+        "hbsAb_Result": "阴性",
+        "hbeAb_Result": "阴性",
+        "hbeAg_Result": "阳性"
+      },
+      {
+        "check_Date": "2016-04-15",
+        "pregnancy_States": "孕49周",
+        "hbsAg_Result": "阳性",
+        "hbcAb_Result": "阴性",
+        "hbsAb_Result": "阳性",
+        "hbeAb_Result": "阳性",
+        "hbeAg_Result": "阳性"
+      },
+      {
+        "check_Date": "2016-07-31",
+        "pregnancy_States": "产后13周",
+        "hbsAg_Result": "阳性",
+        "hbcAb_Result": "阳性",
+        "hbsAb_Result": "阳性",
+        "hbeAb_Result": "阳性",
+        "hbeAg_Result": "阳性"
+      },
+      {
+        "check_Date": "2016-09-10",
+        "pregnancy_States": "孕70周",
+        "hbsAg_Result": "阴性",
+        "hbcAb_Result": "阴性",
+        "hbsAb_Result": "阴性",
+        "hbeAb_Result": "阴性",
+        "hbeAg_Result": "阳性"
+      },
+      {
+        "check_Date": "2017-01-31",
+        "pregnancy_States": "孕91周",
+        "hbsAg_Result": "11",
+        "hbcAb_Result": "未知",
+        "hbsAb_Result": "未知",
+        "hbeAb_Result": "未知",
+        "hbeAg_Result": "55"
+      }
+    ],
+    "liver_B_List": [
+      {
+        "clinical_Abnormalities": "肝硬化",
+        "check_Liver_B_Date": "2016-02-10",
+        "pregnancy_States": null
+      },
+      {
+        "clinical_Abnormalities": "其他(脂肪肝)",
+        "check_Liver_B_Date": "2016-04-09",
+        "pregnancy_States": null
+      },
+      {
+        "clinical_Abnormalities": "肝硬化",
+        "check_Liver_B_Date": "2016-07-30",
+        "pregnancy_States": null
+      },
+      {
+        "clinical_Abnormalities": "肝癌",
+        "check_Liver_B_Date": "2016-09-10",
+        "pregnancy_States": null
+      },
+      {
+        "clinical_Abnormalities": "肝癌",
+        "check_Liver_B_Date": "2017-02-01",
+        "pregnancy_States": "孕91周"
+      }
+    ],
+    "liver_Result_List": [
+      {
+        "check_Liver_Check_Date": "2016-04-19",
+        "liver_ALT_Result": "44",
+        "liver_AST_Result": "22",
+        "liver_TBIL_Result": "21",
+        "liver_DBIL_Result": "10",
+        "liver_ALB_Result": "58",
+        "pregnancy_States": "孕50周"
+      },
+      {
+        "check_Liver_Check_Date": "2016-07-30",
+        "liver_ALT_Result": "40",
+        "liver_AST_Result": "21",
+        "liver_TBIL_Result": "12",
+        "liver_DBIL_Result": "9",
+        "liver_ALB_Result": "88",
+        "pregnancy_States": "产后13周"
+      },
+      {
+        "check_Liver_Check_Date": "2016-09-25",
+        "liver_ALT_Result": "11",
+        "liver_AST_Result": "33",
+        "liver_TBIL_Result": "44",
+        "liver_DBIL_Result": "11",
+        "liver_ALB_Result": "77",
+        "pregnancy_States": "孕72周"
+      },
+      {
+        "check_Liver_Check_Date": "2017-01-31",
+        "liver_ALT_Result": "99",
+        "liver_AST_Result": "43",
+        "liver_TBIL_Result": "55",
+        "liver_DBIL_Result": "12",
+        "liver_ALB_Result": "66",
+        "pregnancy_States": "孕91周"
+      },
+      {
+        "check_Liver_Check_Date": "2016-02-04",
+        "liver_ALT_Result": "21",
+        "liver_AST_Result": "19",
+        "liver_TBIL_Result": "6.7",
+        "liver_DBIL_Result": "2.6",
+        "liver_ALB_Result": "38.9",
+        "pregnancy_States": "孕39周"
+      },
+      {
+        "check_Liver_Check_Date": "2016-11-15",
+        "liver_ALT_Result": "24",
+        "liver_AST_Result": "36",
+        "liver_TBIL_Result": "5.2",
+        "liver_DBIL_Result": "2.3",
+        "liver_ALB_Result": "33.4",
+        "pregnancy_States": "孕80周"
+      }
+    ]
+  }
+}
