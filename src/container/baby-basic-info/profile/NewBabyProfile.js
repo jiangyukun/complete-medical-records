@@ -7,6 +7,8 @@ import {Item, IconNav, ItemContent} from '../../../component/'
 
 class NewBabyProfile extends React.Component {
   render() {
+    const {babyBasicInfo} = this.props
+
     return (
       <Item>
         <IconNav iconClassName="profile-basic-icon"/>
@@ -15,22 +17,22 @@ class NewBabyProfile extends React.Component {
           <div className="content-item">
             <div className="flex mt-7">
               <div className="flex1">
-                <span>体重：2000g： </span>
+                <span>体重：{babyBasicInfo['weight']}g</span>
               </div>
               <div className="flex1">
-                <span>身高： 50.0 cm</span>
+                <span>身高： {babyBasicInfo['height']} cm</span>
               </div>
             </div>
             <div className="flex mt-7">
               <div className="flex1">
-                <span>头围：18 cm</span>
+                <span>头围：{babyBasicInfo['head_Circumference']} cm</span>
               </div>
               <div className="flex1">
-                <span>Apgar评分：10</span>
+                <span>Apgar评分：{babyBasicInfo['apgar']}</span>
               </div>
             </div>
             <div className="mt-7">
-              出生缺陷： 未知/无/出生缺陷内容
+              出生缺陷： {babyBasicInfo['physiological_Defect']}
             </div>
           </div>
         </ItemContent>

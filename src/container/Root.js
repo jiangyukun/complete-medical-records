@@ -14,7 +14,7 @@ class Root extends React.Component {
       <Provider store={this.props.store}>
         <div>
           {/*<DevTools/>*/}
-          <App/>
+          <App isMotherMatched={this.props.isMotherMatched}/>
         </div>
       </Provider>
     )

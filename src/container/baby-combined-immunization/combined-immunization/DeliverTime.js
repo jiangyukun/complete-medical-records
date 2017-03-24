@@ -14,13 +14,17 @@ class DeliverTime extends React.Component {
           <header>分娩时间</header>
           <div className="content-item">
             <div className="mt-7">
-              2017-01-01 11:10
+              {this.props.deliverTime}
             </div>
           </div>
         </ItemContent>
       </Item>
     )
   }
+}
+
+DeliverTime.propTypes = {
+  deliverTime: React.PropTypes.string
 }
 
 export default DeliverTime

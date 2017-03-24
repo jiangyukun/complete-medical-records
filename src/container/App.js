@@ -8,10 +8,19 @@ import BabyPage from './BabyPage'
 
 class App extends React.Component {
   render() {
+    if (this.props.isMotherMatched) {
+      return (
+        <MotherPage/>
+      )
+    }
     return (
-      <MotherPage/>
+      <BabyPage/>
     )
   }
+}
+
+App.propTypes = {
+  isMotherMatched: React.PropTypes.bool
 }
 
 export default App

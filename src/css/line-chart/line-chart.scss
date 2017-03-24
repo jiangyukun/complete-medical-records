@@ -16,8 +16,12 @@
 
 .line {
     stroke-width: 2;
-    fill: transparent;
+    fill: none;
     stroke: #57abfb;
+}
+
+.line-for-linear-gradient {
+    stroke: none;
 }
 
 .line-circle-outer {

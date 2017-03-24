@@ -6,6 +6,7 @@ import classnames from 'classnames'
 
 import BabyBasicInfo from './baby-basic-info/BabyBasicInfo'
 import BabyCombinedImmunization from './baby-combined-immunization/BabyCombinedImmunization'
+import BabyLaboratoryResult from './baby-laboratory-result/BabyLaboratoryResult'
 
 class BabyPage extends React.Component {
   state = {
@@ -22,6 +23,7 @@ class BabyPage extends React.Component {
           <BabyCombinedImmunization/>
         </div>
         <div className={classnames('page-container', {'hidden': this.state.current != 3})}>
+          <BabyLaboratoryResult/>
         </div>
         <footer className="footer-nav">
           <div className={classnames('basic-info', {'active': this.state.current == 1})} onClick={() => this.setState({current: 1})}>

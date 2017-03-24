@@ -18,16 +18,32 @@ class MotherPage extends React.Component {
     return (
       <div className="mother">
         <div className={classnames('page-container', {'hidden': this.state.current != 1})}>
-          <BasicInfo/>
+          {
+            this.state.current == 1 && (
+              <BasicInfo/>
+            )
+          }
         </div>
         <div className={classnames('page-container', {'hidden': this.state.current != 2})}>
-          <TreatSituation/>
+          {
+            this.state.current == 2 && (
+              <TreatSituation/>
+            )
+          }
         </div>
         <div className={classnames('page-container', {'hidden': this.state.current != 3})}>
-          <ObstetricExamination/>
+          {
+            this.state.current == 3 && (
+              <ObstetricExamination/>
+            )
+          }
         </div>
         <div className={classnames('page-container', {'hidden': this.state.current != 4})}>
-          <AnalysisResult/>
+          {
+            this.state.current == 4 && (
+              <AnalysisResult/>
+            )
+          }
         </div>
         <footer className="footer-nav">
           <div className={classnames('basic-info', {'active': this.state.current == 1})} onClick={() => this.setState({current: 1})}>

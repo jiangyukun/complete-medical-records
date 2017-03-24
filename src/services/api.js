@@ -18,3 +18,22 @@ export function fetchObstetricExamination() {
 export function fetchAnalysisResult() {
   return _get('/archives/patient/completionAssayResultDetail/12345678911')
 }
+
+export function fetchBabyBasicInfo() {
+  return _get('/archives/patient/queryMyPatientcompletionBabyInfoDetail/161118041500578966/12345678911')
+}
+
+export function fetchBabyCombinedImmunization() {
+  return _get('/archives/patient/queryMyPatientcompletionBabyImmuneDetail/161118041500578966/12345678911')
+}
+
+export function fetchBabyLaboratoryResult() {
+  return _get('/archives/patient/queryMyPatientcompletionBabyAssayResultDetail/161118041500578966/12345678911')
+}
+
+/*
+ * "161118041500578966"
+ 1
+ :
+ "161118041500578999"
+ */

@@ -8,6 +8,8 @@ import {Item, IconNav, ItemContent} from '../../../component/'
 
 class BreastMilkFeed extends React.Component {
   render() {
+    const {babyBasicInfo} = this.props
+
     return (
       <Item className="item-padding">
         <IconNav iconClassName="breast-milk-feed"/>
@@ -15,7 +17,7 @@ class BreastMilkFeed extends React.Component {
           <header>母乳喂养情况</header>
           <div className="content-item">
             <div className="mt-7">
-              未知/母乳喂养/混合喂养/奶粉喂养
+              {babyBasicInfo['breast_Feed']}
             </div>
           </div>
         </ItemContent>

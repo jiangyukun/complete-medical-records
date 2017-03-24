@@ -7,9 +7,9 @@ import LineChartDialog from '../../line-chart/LineChartDialog'
 import {Item, IconNav, ItemContent} from '../../../component/'
 import VerticalLine from '../../../component/VerticalLine'
 
-class HBV_DNA extends React.Component {
+class Baby_HBV_DNA extends React.Component {
   state = {
-    showLineChart: true
+    showLineChart: false
   }
 
   handleLineChartClick = () => {
@@ -18,19 +18,12 @@ class HBV_DNA extends React.Component {
 
   render() {
     const {hbvDnaList} = this.props
-    console.log(hbvDnaList)
-    const lineChartData = hbvDnaList.map(item => ({
-      periodName: item['pregnancy_States'],
-      date: item['check_Liver_HBV_DNA_Date'],
-      value: item['liver_HBV_DNA_Result']
-    }))
 
     return (
-      <Item className="analysis-result-item" verticalLine={false}>
+      <Item className="laboratory-result-item" verticalLine={false}>
         {
           this.state.showLineChart && (
-            <LineChartDialog lineChartData={lineChartData}
-              onExited={() => this.setState({showLineChart: false})}/>
+            <LineChartDialog onExited={() => this.setState({showLineChart: false})}/>
           )
         }
         <VerticalLine bottom="3.5rem"/>
@@ -40,7 +33,7 @@ class HBV_DNA extends React.Component {
         <div className="line-chart-container" onClick={this.handleLineChartClick}>
           <i className="line-chart-icon"></i>
         </div>
-        <IconNav iconClassName="analysis-result-1"/>
+        <IconNav iconClassName="hbv-dna-icon"/>
         <ItemContent className="no-border">
           <header>HBV-DNA检查</header>
           {
@@ -48,11 +41,11 @@ class HBV_DNA extends React.Component {
               return (
                 <div key={index} className="content-item">
                   <header className="flex">
-                    <div className="flex1">{hbvDna['pregnancy_States']}</div>
-                    <div className="flex1">{hbvDna['liver_HBV_DNA_Result']}</div>
+                    <div className="flex1">{hbvDna['week_Of_Age']}</div>
+                    <div className="flex1">{hbvDna['baby_Liver_HBV_DNA_Result']}</div>
                   </header>
                   <div className="check-date">
-                    <span>检查日期：{hbvDna['check_Liver_HBV_DNA_Date']}</span>
+                    <span>检查日期：{hbvDna['babay_Check_Liver_HBV_DNA_Date']}</span>
                   </div>
                 </div>
               )
@@ -64,4 +57,4 @@ class HBV_DNA extends React.Component {
   }
 }
 
-export default HBV_DNA
+export default Baby_HBV_DNA

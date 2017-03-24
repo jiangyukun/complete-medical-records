@@ -16,7 +16,7 @@ class LineChartDialog extends React.Component {
   }
 
   componentDidMount() {
-    loadD3AndDraw(this._d3Container)
+    loadD3AndDraw(this._d3Container, this.props.lineChartData)
   }
 
   componentDidUpdate() {
@@ -35,6 +35,7 @@ class LineChartDialog extends React.Component {
 }
 
 LineChartDialog.propTypes = {
+  lineChartData: React.PropTypes.array,
   onExited: React.PropTypes.func
 }
 

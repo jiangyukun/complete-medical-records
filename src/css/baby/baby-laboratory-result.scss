@@ -1,0 +1,22 @@
+
+.hbv-dna-icon {
+    display: inline-block;
+    background-image: url("../../../img/15.svg");
+    background-size: cover;
+    width: 3rem;
+    height: 3rem;
+}
+
+.laboratory-result-item {
+    background: #fff;
+    margin-top: 2rem;
+}
+
+
+.baby-laboratory-result-page {
+    background-color: #f1f7fc;
+    .check-date {
+        color: #8a94a6;
+        @include font-size(13px)
+    }
+}

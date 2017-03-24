@@ -2,7 +2,7 @@
  * Created by jiangyukun on 2017/3/22.
  */
 import {fork, call, take, put, select} from 'redux-saga/effects'
-import {mother} from '../constants/action-type'
+import {mother, baby} from '../constants/action-type'
 import phase from '../constants/phase'
 import * as api from '../services/api'
 
@@ -46,11 +46,44 @@ function* fetchAnalysisResult() {
   }
 }
 
+function* fetchBabyBasicInfo() {
+  yield take(baby.FETCH_BASIC_INFO)
+  try {
+    let result = yield call(api.fetchBabyBasicInfo)
+    yield put({type: baby.FETCH_BASIC_INFO + phase.SUCCESS, result})
+  } catch (err) {
+    yield put({type: baby.FETCH_BASIC_INFO + phase.FAILURE, err})
+  }
+}
+
+function* fetchBabyCombinedImmunization() {
+  yield take(baby.FETCH_BABY_COMBINED_IMMUNIZATION)
+  try {
+    let result = yield call(api.fetchBabyCombinedImmunization)
+    yield put({type: baby.FETCH_BABY_COMBINED_IMMUNIZATION + phase.SUCCESS, result})
+  } catch (err) {
+    yield put({type: baby.FETCH_BABY_COMBINED_IMMUNIZATION + phase.FAILURE, err})
+  }
+}
+
+function* fetchBabyLaboratoryResult() {
+  yield take(baby.FETCH_BABY_LABORATORY_RESULT)
+  try {
+    let result = yield call(api.fetchBabyLaboratoryResult)
+    yield put({type: baby.FETCH_BABY_LABORATORY_RESULT + phase.SUCCESS, result})
+  } catch (err) {
+    yield put({type: baby.FETCH_BABY_LABORATORY_RESULT + phase.FAILURE, err})
+  }
+}
+
 export default function* root() {
   yield [
     fork(fetchBasicInfo),
     fork(fetchTreatSituation),
     fork(fetchObstetricExamination),
-    fork(fetchAnalysisResult)
+    fork(fetchAnalysisResult),
+    fork(fetchBabyBasicInfo),
+    fork(fetchBabyCombinedImmunization),
+    fork(fetchBabyLaboratoryResult),
   ]
 }

@@ -26,3 +26,25 @@ export function bodyParam(paramObj) {
   }
   return encodeURI(paramUrl)
 }
+
+/**
+ * 将url地址转化为key value对象
+ * @param url
+ * @returns {{}}
+ */
+export function urlParams(url) {
+  let result = {}
+  if (!url) return result
+  let paramUrl = url.substring(url.indexOf('?') + 1)
+  if (!paramUrl) return result
+
+  let parts = paramUrl.split('&')
+  parts.forEach(part => {
+    let keyAndValue = part.split('=')
+    if (keyAndValue.length == 2) {
+      result[keyAndValue[0]] = keyAndValue[1]
+    }
+  })
+
+  return result
+}

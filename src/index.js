@@ -13,6 +13,7 @@ import './css/components/table-list.scss'
 import './css/app.scss'
 import './css/mother/mother.scss'
 import './css/baby/baby.scss'
+
 import Root from './container/Root'
 import DevTools from './container/devtools/DevTools'
 import rootSaga from './sagas/'
@@ -22,8 +23,15 @@ let sagaMiddleware = createSagaMiddleware()
 let store = createStore(allReducers, {}, compose(applyMiddleware(sagaMiddleware), DevTools.instrument()))
 sagaMiddleware.run(rootSaga)
 
-render(<Root store={store}/>, document.querySelector('#root'))
+let isMotherMatched = /\/mother/.test(location.href)
+store.dispatch({
+  type: 'PAGE_TYPE_CHECKED', isMotherMatched
+})
 
-window.onerror = err => {
-  console.log(err)
-}
+render((
+  <Root store={store} isMotherMatched={isMotherMatched}/>
+), document.querySelector('#root'))
+
+/*window.onerror = err => {
+ console.log(err)
+ }*/

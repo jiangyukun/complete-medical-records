@@ -24,3 +24,10 @@ export const mother = generatorKeyValue('MOTHER', {
   FETCH_OBSTETRIC_EXAMINATION: null,
   FETCH_ANALYSIS_RESULT: null,
 })
+
+
+export const baby = generatorKeyValue('BABY', {
+  FETCH_BASIC_INFO: null,
+  FETCH_BABY_COMBINED_IMMUNIZATION: null,
+  FETCH_BABY_LABORATORY_RESULT: null,
+})
