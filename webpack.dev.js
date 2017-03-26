@@ -7,12 +7,6 @@ module.exports = {
     'webpack-hot-middleware/client?reload=true',
     './src/index.js'
   ],
-  devServer: {
-    historyApiFallback: true,
-    hot: true,
-    inline: true,
-    port: 3000
-  },
   output: {
     path: path.join(__dirname, 'dist'),
     filename: 'bundle.js',

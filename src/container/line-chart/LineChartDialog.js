@@ -20,13 +20,14 @@ class LineChartDialog extends React.Component {
   }
 
   componentDidUpdate() {
+    loadD3AndDraw(this._d3Container, this.props.lineChartData)
     // loadD3AndDraw(this._d3Container)
   }
 
   render() {
     return (
       <Modal show={this.state.show} onHide={this.close} onExited={this.props.onExited}>
-        <div className="line-chart-content" ref={c => this._d3Container = c}></div>
+        <div className="line-chart-content" onClick={this.close} ref={c => this._d3Container = c}></div>
       </Modal>
     )
   }

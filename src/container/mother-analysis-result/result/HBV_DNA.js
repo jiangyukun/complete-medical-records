@@ -9,7 +9,7 @@ import VerticalLine from '../../../component/VerticalLine'
 
 class HBV_DNA extends React.Component {
   state = {
-    showLineChart: true
+    showLineChart: false
   }
 
   handleLineChartClick = () => {
@@ -18,7 +18,6 @@ class HBV_DNA extends React.Component {
 
   render() {
     const {hbvDnaList} = this.props
-    console.log(hbvDnaList)
     const lineChartData = hbvDnaList.map(item => ({
       periodName: item['pregnancy_States'],
       date: item['check_Liver_HBV_DNA_Date'],

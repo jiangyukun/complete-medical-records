@@ -17,6 +17,9 @@ function toIndex(req, res) {
   res.sendFile(__dirname + '/index.html')
 }
 
+app.get('/mother', toIndex)
+require('./controller')(app)
+
 app.listen(port, function (error) {
   if (error) {
     console.error(error)

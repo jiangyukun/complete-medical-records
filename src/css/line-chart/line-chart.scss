@@ -1,56 +1,56 @@
-
-.line-chart-view {
+@media screen and (orientation: portrait) {
+  /*.line-chart-view {
     transform: rotate(90deg) translate(0, -100%);
     transform-origin: 0 0;
+  }*/
 }
 
 .line-chart-content {
-    /*transform: rotate(90deg) ;
-    transform-origin: 0 0;*/
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    margin: 1.5rem;
-    background: #fff;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: 1.5rem;
+  background: #fff;
 }
 
 .x-axis {
-    top: 5rem;
+  top: 5rem;
 }
 
 .line {
-    stroke-width: 2;
-    fill: none;
-    stroke: #57abfb;
+  stroke-width: 2;
+  fill: none;
+  stroke: #57abfb;
 }
 
 .line-for-linear-gradient {
-    stroke: none;
+  stroke: none;
 }
 
 .line-circle-outer {
-    stroke-width: 1;
-    stroke: #56b4fc;
-    fill: #fff;
+  stroke-width: 1;
+  stroke: #56b4fc;
+  fill: #fff;
 }
 
 .line-circle-inner {
-    fill: #fff;
+  fill: #fff;
 }
 
 .bottom-first-line-text {
-    font-size: 12px;
-    fill: #8a94a6;
+  font-size: 12px;
+  fill: #8a94a6;
+  //text-anchor: center;
 }
 
 .bottom-second-line-text {
-    font-size: 11px;
-    fill: #d4d9da;
+  font-size: 11px;
+  fill: #d4d9da;
 }
 
 .x-line {
-    stroke: #58aafb;
-    opacity: 0.15;
+  stroke: #58aafb;
+  opacity: 0.15;
 }

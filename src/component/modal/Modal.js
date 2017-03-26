@@ -16,6 +16,12 @@ class Modal extends Component {
     this.props.onExited()
   }
 
+  componentWillReceiveProps(newProps) {
+    if (this.props.show && !newProps.show) {
+      this.onHide()
+    }
+  }
+
   _wrapChildren() {
     return (
       <div className="modal">
