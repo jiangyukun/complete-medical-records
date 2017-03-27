@@ -26,9 +26,21 @@ export function loadD3AndDraw(container, dataList) {
     }
   })
 
+  const startData = dataList1.map(d => {
+    return {
+      ...d, value: 0
+    }
+  })
+
+
+  //
+
   require.ensure([], require => {
     const screenWidth = window.innerWidth / dpr
-    const screenHeight = window.innerHeight / dpr
+    let screenHeight = window.innerHeight / dpr
+    if (screenHeight < dataList1.length * 80) {
+      screenHeight = dataList1.length * 80
+    }
 
     const d3 = require('d3')
     const width = 500, height = 330
@@ -40,11 +52,8 @@ export function loadD3AndDraw(container, dataList) {
       .attr('class', 'line-chart-view')
 
     const scaleX = d3.scaleLinear().domain([0, 9]).range([50, viewBoxWidth - 50])
-    const scaleY = d3.scaleLinear().domain([0, dataList1.length - 1]).range([75, viewBoxHeight - 50])
-
-    let line = d3.line()
-      .x(d => scaleX(d.value))
-      .y((y, index) => scaleY(index))
+    const scaleY = d3.scaleLinear().domain([0, dataList1.length - 1]).range([75, viewBoxHeight - 40])
+    const line = d3.line().x(d => scaleX(d.value)).y((y, index) => scaleY(index))
 
     drawBackgroundGradientColor()
     drawLines()
@@ -122,7 +131,7 @@ export function loadD3AndDraw(container, dataList) {
         .attr('x1', d => scaleX(d))
         .attr('x2', d => scaleX(d))
         .attr('y1', 75)
-        .attr('y2', viewBoxHeight - 50)
+        .attr('y2', viewBoxHeight - 40)
         .attr('class', 'x-line')
 
 
@@ -131,8 +140,24 @@ export function loadD3AndDraw(container, dataList) {
     function drawLineChart() {
       //折线
       svg.append('path')
+        .datum(startData)
         .attr('class', 'line')
-        .attr('d', line(dataList1))
+        .attr('d', line)
+        .transition()
+        .duration(1000)
+        .attrTween('d', (datum) => {
+          return (cur) => {
+            return line(datum.map((item, index) => {
+              return {
+                ...item, value: dataList1[index].value * cur
+              }
+            }))
+          }
+        })
+        .on('end', ()=> {
+
+        })
+
 
     }
 
@@ -156,10 +181,10 @@ export function loadD3AndDraw(container, dataList) {
         .data(dataList1)
         .enter()
         .append('text')
-        .attr('x', d => scaleX(d.value) + 8)
+        .attr('x', d => scaleX(d.value) + 10)
         .attr('y', (d, i) => scaleY(i))
         .attr('transform', (d, i) => {
-          return `rotate(90 ${scaleX(d.value) + 8} ${scaleY(i)})`
+          return `rotate(90 ${scaleX(d.value) + 10} ${scaleY(i)})`
         })
         .attr('class', 'current-value-text')
         .text(d => d.text)
@@ -203,10 +228,10 @@ export function loadD3AndDraw(container, dataList) {
         .data(d3.range(10))
         .enter()
         .append('text')
-        .attr('x', d => scaleX(d) - 5)
+        .attr('x', d => scaleX(d) - 3)
         .attr('y', 15)
         .attr('transform', d => {
-          return `rotate(90 ${scaleX(d) - 5} 15)`
+          return `rotate(90 ${scaleX(d) - 3} 15)`
         })
         .attr('class', 'x-top-line-text')
         .text(d => {
