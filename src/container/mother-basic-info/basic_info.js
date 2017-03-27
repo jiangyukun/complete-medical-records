@@ -18,7 +18,7 @@ export default function motherBasicInfo(state = defaultValue, action) {
     switch (action.type) {
 
       case mother.FETCH_BASIC_INFO + phase.SUCCESS:
-        nextIState = fromJS(action.result)
+        nextIState = fromJS(action.result || {})
         break
     }
     if (nextIState == iState) {

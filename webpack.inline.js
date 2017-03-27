@@ -7,7 +7,7 @@ module.exports = {
     './src/index.js'
   ],
   devServer: {
-    host: '192.168.18.112',
+    host: '192.168.18.148',
     hot: true,
     inline: true,
     overlay: true,
@@ -16,7 +16,7 @@ module.exports = {
   output: {
     path: path.join(__dirname, 'dist'),
     filename: 'bundle.js',
-    publicPath: 'http://192.168.18.112:3000/static/',
+    publicPath: 'http://192.168.18.148:3000/static/',
     chunkFilename: '[name].[chunkhash:5].chunk.js'
   },
   plugins: [

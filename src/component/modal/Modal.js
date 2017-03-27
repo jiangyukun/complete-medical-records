@@ -5,6 +5,7 @@
 import React, {Component, PropTypes} from 'react'
 import {unmountComponentAtNode, unstable_renderSubtreeIntoContainer as renderSubtreeIntoContainer} from 'react-dom'
 import classnames from 'classnames'
+import {addClass, removeClass} from 'dom-helpers/class'
 
 class Modal extends Component {
   onHide = () => {
@@ -39,6 +40,8 @@ class Modal extends Component {
     this.container = document.createElement('div')
     document.body.appendChild(this.container)
     renderSubtreeIntoContainer(this, this._wrapChildren(), this.container)
+    // 使页面无法滚动
+    addClass(document.getElementsByTagName('html')[0], 'modal-opened')
   }
 
   componentDidUpdate() {
@@ -48,6 +51,8 @@ class Modal extends Component {
   componentWillUnmount() {
     unmountComponentAtNode(this.container)
     document.body.removeChild(this.container)
+    // 取消页面无法滚动
+    removeClass(document.getElementsByTagName('html')[0], 'modal-opened')
   }
 
   render() {

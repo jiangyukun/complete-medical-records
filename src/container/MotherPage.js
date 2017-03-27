@@ -8,10 +8,11 @@ import BasicInfo from './mother-basic-info/BasicInfo'
 import ObstetricExamination from './mother-obstetric-examination/ObstetricExamination'
 import TreatSituation from './mother-treat-situation/TreatSituation'
 import AnalysisResult from './mother-analysis-result/AnalysisResult'
+import {motherPageStart} from '../constants/constants'
 
 class MotherPage extends React.Component {
   state = {
-    current: 4
+    current: motherPageStart
   }
 
   render() {

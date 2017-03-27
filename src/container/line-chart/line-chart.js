@@ -2,15 +2,22 @@
  * Created by jiangyukun on 2017/3/23.
  */
 
-export function loadD3AndDraw(container, dataList) {
-  // console.log(dataList)
+import {dpr} from "../../constants/constants"
 
+export function loadD3AndDraw(container, dataList) {
   const dataList1 = dataList.map(d => {
-    let v = parseFloat(d.value)
-    if (isNaN(v)) {
+    let v = 0
+    if (d.value.indexOf('>') != -1) {
+      v = 9.5
+    } else if (d.value.indexOf('<') != -1) {
       v = 0
     } else {
-      v = Math.log10(v)
+      v = parseFloat(d.value)
+      if (!isNaN(v)) {
+        v = Math.log10(v)
+      } else {
+        v = 0
+      }
     }
     return {
       ...d,
@@ -20,17 +27,12 @@ export function loadD3AndDraw(container, dataList) {
   })
 
   require.ensure([], require => {
-    const dpr = window.devicePixelRatio
-    let screenWidth = window.innerWidth / dpr
-    let screenHeight = window.innerHeight / dpr
+    const screenWidth = window.innerWidth / dpr
+    const screenHeight = window.innerHeight / dpr
 
     const d3 = require('d3')
-
     const width = 500, height = 330
-    const value = [150, 200, 300, 250, 120, 450]
-
     const svg = d3.select(container).append('svg')
-
     const viewBoxX = 0, viewBoxY = 0, viewBoxWidth = screenWidth - 30, viewBoxHeight = screenHeight - 30
 
     svg.attr('width', viewBoxWidth * dpr).attr('height', viewBoxHeight * dpr)
@@ -49,6 +51,7 @@ export function loadD3AndDraw(container, dataList) {
     drawLineChart()
     drawCircle()
     drawAxisText()
+    drawCurrentValue()
 
     function drawBackgroundGradientColor() {
 
@@ -147,6 +150,21 @@ export function loadD3AndDraw(container, dataList) {
         .attr('r', 3)
     }
 
+    function drawCurrentValue() {
+      let currentValues = svg.append('g')
+      currentValues.selectAll('text')
+        .data(dataList1)
+        .enter()
+        .append('text')
+        .attr('x', d => scaleX(d.value) + 8)
+        .attr('y', (d, i) => scaleY(i))
+        .attr('transform', (d, i) => {
+          return `rotate(90 ${scaleX(d.value) + 8} ${scaleY(i)})`
+        })
+        .attr('class', 'current-value-text')
+        .text(d => d.text)
+    }
+
     function drawAxisText() {
 
       //文字x1
@@ -156,9 +174,9 @@ export function loadD3AndDraw(container, dataList) {
         .enter()
         .append('text')
         .attr('x', 30)
-        .attr('y', d => scaleY(d) - 20)
+        .attr('y', d => scaleY(d))
         .attr('transform', d => {
-          return `rotate(90 30 ${scaleY(d) - 20})`
+          return `rotate(90 30 ${scaleY(d)})`
         })
         .attr('class', 'bottom-first-line-text')
         .text(d => dataList1[d].periodName)
@@ -171,9 +189,9 @@ export function loadD3AndDraw(container, dataList) {
         .enter()
         .append('text')
         .attr('x', 10)
-        .attr('y', d => scaleY(d) - 30)
+        .attr('y', d => scaleY(d))
         .attr('transform', d => {
-          return `rotate(90 10 ${scaleY(d) - 30})`
+          return `rotate(90 10 ${scaleY(d)})`
         })
         .attr('class', 'bottom-second-line-text')
         .text(d => dataList1[d].date)
@@ -185,12 +203,12 @@ export function loadD3AndDraw(container, dataList) {
         .data(d3.range(10))
         .enter()
         .append('text')
-        .attr('x', d => scaleX(d))
+        .attr('x', d => scaleX(d) - 5)
         .attr('y', 15)
         .attr('transform', d => {
-          return `rotate(90 ${scaleX(d)} 15)`
+          return `rotate(90 ${scaleX(d) - 5} 15)`
         })
-        .attr('class', 'bottom-second-line-text')
+        .attr('class', 'x-top-line-text')
         .text(d => {
           if (d == 0) return ''
           return '1.00E+0' + d

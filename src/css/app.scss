@@ -1,6 +1,15 @@
 @import "./mixins.scss";
 @import "./line-chart/line-chart.scss";
 
+.modal-opened #root {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+}
+
 .star-icon {
     display: inline-block;
     background-image: url("../../img/star-1.svg");

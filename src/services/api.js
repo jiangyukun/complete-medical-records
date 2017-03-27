@@ -3,32 +3,32 @@
  */
 import {_get} from './http'
 
-export function fetchMotherBasicInfo() {
-  return _get('/archives/patient/completionBaseInfoDetail/12345678911')
+export function fetchMotherBasicInfo(mobile) {
+  return _get(`/archives/patient/completionBaseInfoDetail/${mobile}`)
 }
 
-export function fetchTreatSituation() {
-  return _get('/archives/patient/completionDrugUseDetail/12345678911')
+export function fetchTreatSituation(mobile) {
+  return _get(`/archives/patient/completionDrugUseDetail/${mobile}`)
 }
 
-export function fetchObstetricExamination() {
-  return _get('/archives/patient/completionObstetricsCheckDetail/12345678911')
+export function fetchObstetricExamination(mobile) {
+  return _get(`/archives/patient/completionObstetricsCheckDetail/${mobile}`)
 }
 
-export function fetchAnalysisResult() {
-  return _get('/archives/patient/completionAssayResultDetail/12345678911')
+export function fetchAnalysisResult(mobile) {
+  return _get(`/archives/patient/completionAssayResultDetail/${mobile}`)
 }
 
-export function fetchBabyBasicInfo() {
-  return _get('/archives/patient/queryMyPatientcompletionBabyInfoDetail/161118041500578966/12345678911')
+export function fetchBabyBasicInfo(babyId, mobile) {
+  return _get(`/archives/patient/queryMyPatientcompletionBabyInfoDetail/${babyId}/${mobile}`)
 }
 
-export function fetchBabyCombinedImmunization() {
-  return _get('/archives/patient/queryMyPatientcompletionBabyImmuneDetail/161118041500578966/12345678911')
+export function fetchBabyCombinedImmunization(babyId, mobile) {
+  return _get(`/archives/patient/queryMyPatientcompletionBabyImmuneDetail/${babyId}/${mobile}`)
 }
 
-export function fetchBabyLaboratoryResult() {
-  return _get('/archives/patient/queryMyPatientcompletionBabyAssayResultDetail/161118041500578966/12345678911')
+export function fetchBabyLaboratoryResult(babyId, mobile) {
+  return _get(`/archives/patient/queryMyPatientcompletionBabyAssayResultDetail/${babyId}/${mobile}`)
 }
 
 /*

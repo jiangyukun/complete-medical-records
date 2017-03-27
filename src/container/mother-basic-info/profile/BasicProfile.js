@@ -3,11 +3,13 @@
  */
 import React from 'react'
 
+import {getText} from '../../../helper/utils'
+
 class BasicProfile extends React.Component {
 
   render() {
-    const {motherBasicInfo} = this.props
-    const baseInfo = motherBasicInfo['baseInfo']
+    const motherBasicInfo = this.props.motherBasicInfo
+    const baseInfo = motherBasicInfo['baseInfo'] || {}
     return (
       <section className="profile-basic">
         <div className="profile-icon">
@@ -19,14 +21,14 @@ class BasicProfile extends React.Component {
           <div className="profile-items">
             <div className="flex">
               <div className="flex1">
-                <span>姓名：{baseInfo['real_Name']}</span>
+                <span>姓名：{getText(baseInfo['real_Name'])}</span>
               </div>
               <div className="flex1">
-                <span className="profile-item-monitory">民族：{baseInfo['nation']}</span>
+                <span className="profile-item-monitory">民族：{getText(baseInfo['nation'])}</span>
               </div>
             </div>
             <div className="mt-7">
-              <span>出生日期：{baseInfo['birth_Date']}</span>
+              <span>出生日期：{getText(baseInfo['birth_Date'])}</span>
             </div>
           </div>
         </div>

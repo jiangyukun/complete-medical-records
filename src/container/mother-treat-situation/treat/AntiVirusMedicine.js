@@ -7,13 +7,23 @@ import {Item, IconNav, ItemContent} from '../../../component/'
 
 class AntiVirusMedicine extends React.Component {
   render() {
+    const antiVirusMedicine = this.props.antiVirusMedicine
+    const isEmpty = antiVirusMedicine || antiVirusMedicine.length == 0
+
     return (
       <Item>
         <IconNav iconClassName="liver-icon-1"/>
         <ItemContent>
           <header>抗病毒药物使用情况</header>
           {
-            this.props.antiVirusMedicine.map((antiVirus, index) => {
+            isEmpty && (
+              <div className="content-item">
+                无抗病毒药物使用情况
+              </div>
+            )
+          }
+          {
+            !isEmpty && this.props.antiVirusMedicine.map((antiVirus, index) => {
               return (
                 <div key={index} className="content-item">
                   <div className="flex mt-7">

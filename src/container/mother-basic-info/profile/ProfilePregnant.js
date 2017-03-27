@@ -3,11 +3,13 @@
  */
 import React from 'react'
 
+import {getText} from '../../../helper/utils'
+
 class ProfilePregnant extends React.Component {
 
   render() {
     const {motherBasicInfo} = this.props
-    const baseInfo = motherBasicInfo['baseInfo']
+    const baseInfo = motherBasicInfo['baseInfo'] || {}
     return (
       <section className="profile-pregnant">
         <div className="vertical-line"></div>
@@ -17,20 +19,20 @@ class ProfilePregnant extends React.Component {
         <div className="profile-item-description">
           <header>孕产期</header>
           <div className="profile-items">
-            <span>末次月经日期： {baseInfo['last_Menstruation_Date']}</span>
+            <span>末次月经日期： {getText(baseInfo['last_Menstruation_Date'])}</span>
             <div className="mt-7">
-              <span>预产期： {baseInfo['expected_Time']}</span>
+              <span>预产期： {getText(baseInfo['expected_Time'])}</span>
             </div>
             <div className="flex mt-7">
               <div className="flex1">
-                <span>生产次数： {baseInfo['delivery_Number']}</span>
+                <span>生产次数： {getText(baseInfo['delivery_Number'])}</span>
               </div>
               <div className="flex1">
-                <span className="profile-item-monitory">存活子女数：{baseInfo['survival_Number']}</span>
+                <span className="profile-item-monitory">存活子女数：{getText(baseInfo['survival_Number'])}</span>
               </div>
             </div>
             <div className="mt-7">
-              <span>是否有子女感染： {baseInfo['is_Children_Infected']}</span>
+              <span>是否有子女感染： {getText(baseInfo['is_Children_Infected'])}</span>
             </div>
           </div>
         </div>

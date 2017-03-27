@@ -48,3 +48,26 @@ export function urlParams(url) {
 
   return result
 }
+
+// 数据展示形式
+export function getText(value) {
+  if (value == undefined) {
+    return '未知'
+  }
+  return value
+}
+
+
+export function isEmpty(item) {
+  return !item || item == '未知'
+}
+
+export function isAllEmpty(...args) {
+  let allEmpty = true
+  args.forEach(item => {
+    if (item && item != '未知') {
+      allEmpty = false
+    }
+  })
+  return allEmpty
+}

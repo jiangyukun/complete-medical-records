@@ -27,7 +27,10 @@ class LineChartDialog extends React.Component {
   render() {
     return (
       <Modal show={this.state.show} onHide={this.close} onExited={this.props.onExited}>
-        <div className="line-chart-content" onClick={this.close} ref={c => this._d3Container = c}></div>
+        <div className="line-chart-close-button-container">
+          <span className="line-chart-close-button" onClick={this.close}>&times;</span>
+        </div>
+        <div className="line-chart-content" ref={c => this._d3Container = c}></div>
       </Modal>
     )
   }

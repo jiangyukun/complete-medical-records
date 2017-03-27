@@ -3,11 +3,13 @@
  */
 import React from 'react'
 
+import {getText} from '../../../helper/utils'
+
 class ProfileHepatitisB extends React.Component {
 
   render() {
-    const {motherBasicInfo} = this.props
-    const baseInfo = motherBasicInfo['baseInfo']
+    const motherBasicInfo = this.props.motherBasicInfo
+    const baseInfo = motherBasicInfo['baseInfo'] || {}
     return (
       <section className="profile-hepatitis-b">
         <div className="vertical-line"></div>
@@ -17,12 +19,12 @@ class ProfileHepatitisB extends React.Component {
         <div className="profile-item-description">
           <header>乙肝相关病史</header>
           <div className="profile-items">
-            <span>乙肝确诊日期： {baseInfo['hepatitis_B_Date']}</span>
+            <span>乙肝确诊日期： {getText(baseInfo['hepatitis_B_Date'])}</span>
             <div className="mt-7">
-              <span>亲属中乙肝病毒感染者：{baseInfo['infected_Family_Members']}</span>
+              <span>亲属中乙肝病毒感染者：{getText(baseInfo['infected_Family_Members'])}</span>
             </div>
             <div className="mt-7">
-              <span>合并感染情况：{baseInfo['merge_Info']}</span>
+              <span>合并感染情况：{getText(baseInfo['merge_Info'])}</span>
             </div>
           </div>
         </div>

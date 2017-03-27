@@ -7,13 +7,23 @@ import {Item, IconNav, ItemContent} from '../../../component/'
 
 class LiverProtectionMedicine extends React.Component {
   render() {
+    const liverProtectionMedicine = this.props.liverProtectionMedicine
+    const isEmpty = liverProtectionMedicine || liverProtectionMedicine.length == 0
+
     return (
       <Item className="item-padding">
         <IconNav iconClassName="liver-icon-2"/>
         <ItemContent>
           <header>保肝药物使用情况</header>
           {
-            this.props.liverProtectionMedicine.map((liverProtection, index) => {
+            isEmpty && (
+              <div className="content-item">
+                无保肝药物使用情况
+              </div>
+            )
+          }
+          {
+            !isEmpty && liverProtectionMedicine.map((liverProtection, index) => {
               return (
                 <div key={index} className="content-item">
                   <div>药品名称： {liverProtection['drug_Common_Name']}</div>

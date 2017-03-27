@@ -21,7 +21,7 @@ class HBV_DNA extends React.Component {
     const lineChartData = hbvDnaList.map(item => ({
       periodName: item['pregnancy_States'],
       date: item['check_Liver_HBV_DNA_Date'],
-      value: item['liver_HBV_DNA_Result']
+      value: item['liver_HBV_DNA_Result'] || ''
     }))
 
     return (
@@ -29,7 +29,7 @@ class HBV_DNA extends React.Component {
         {
           this.state.showLineChart && (
             <LineChartDialog lineChartData={lineChartData}
-              onExited={() => this.setState({showLineChart: false})}/>
+                             onExited={() => this.setState({showLineChart: false})}/>
           )
         }
         <VerticalLine bottom="3.5rem"/>

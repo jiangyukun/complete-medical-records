@@ -13,15 +13,26 @@ import babyBasicInfo from '../container/baby-basic-info/baby_basic_info'
 import babyCombinedImmunization from '../container/baby-combined-immunization/baby_combined_immunization'
 import babyLaboratoryResult from '../container/baby-laboratory-result/baby_laboratory_result'
 
-function app(state = {isMotherMatched: true}, action) {
+const defaultValue = {
+  token: null,
+  mobile: null,
+  babyId: null,
+  isMotherMatched: true
+}
+
+function app(state = defaultValue, action) {
   const iState = fromJS(state)
   let nextIState = iState
   switch (action.type) {
-    case 'PAGE_TYPE_CHECKED':
-      nextIState = iState.set('isMotherMatched', action.isMotherMatched)
+    case 'PAGE_INIT':
+      const {isMotherMatched, token, mobile, babyId} = action
+      nextIState = iState.set('isMotherMatched', isMotherMatched)
+        .set('token', token)
+        .set('mobile', mobile)
+        .set('babyId', babyId)
       break
   }
-  if (nextIState === iState) return iState
+  if (nextIState === iState) return state
   return nextIState.toJS()
 }
 

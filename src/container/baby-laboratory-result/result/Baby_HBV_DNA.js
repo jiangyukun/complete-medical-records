@@ -18,12 +18,18 @@ class Baby_HBV_DNA extends React.Component {
 
   render() {
     const {hbvDnaList} = this.props
+    const lineChartData = hbvDnaList.map(item => ({
+      periodName: item['week_Of_Age'],
+      date: item['babay_Check_Liver_HBV_DNA_Date'],
+      value: item['baby_Liver_HBV_DNA_Result'] || ''
+    }))
 
     return (
       <Item className="laboratory-result-item" verticalLine={false}>
         {
           this.state.showLineChart && (
-            <LineChartDialog onExited={() => this.setState({showLineChart: false})}/>
+            <LineChartDialog lineChartData={lineChartData}
+                             onExited={() => this.setState({showLineChart: false})}/>
           )
         }
         <VerticalLine bottom="3.5rem"/>
