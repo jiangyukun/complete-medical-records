@@ -32,6 +32,8 @@ export function loadD3AndDraw(svgElement, dataList) {
     }
   })
 
+  const startData1 = []
+
   //
 
   require.ensure([], require => {
@@ -57,8 +59,8 @@ export function loadD3AndDraw(svgElement, dataList) {
 
     const scaleX = d3Scale.scaleLinear().domain([0, 9]).range([50, viewBoxWidth - 50])
     const scaleY = d3Scale.scaleLinear().domain([0, dataList1.length - 1]).range([75, viewBoxHeight - 40])
-    const line = d3Shape.line().x(d => scaleX(d.value)).y((y, index) => scaleY(index))
-    let area = d3Shape.area().x0(scaleX(0)).x1(d => scaleX(d.value)).y((d, i) => scaleY(i))
+    const line = d3Shape.line().x(d => scaleX(d.value)).y(d => scaleY(d.y))
+    let area = d3Shape.area().x0(scaleX(0)).x1(d => scaleX(d.value)).y(d => scaleY(d.y))
 
 
     drawBackgroundGradientColor()
@@ -70,17 +72,25 @@ export function loadD3AndDraw(svgElement, dataList) {
 
       //  颜色渐变
       svg.append('path')
-        .datum(startData)
+        .datum(startData1)
         .attr('class', 'line-for-linear-gradient')
         .style("fill", "url(#linearColor)")
         .attr('d', area)
         .transition()
-        .duration(1000)
-        .attrTween('d', datum => curPercent => {
-          return area(datum.map((item, index) => {
+        .duration(1500)
+        .attrTween('d', () => curPercent => {
+          let curLength = (dataList1.length - 1) * curPercent
+          let pointY = d3Array.range(Math.ceil(curLength) + 1)
+          return area(pointY.map(i => {
+            if (i <= curLength) {
+              return {
+                value: dataList1[i].value, y: i
+              }
+            }
+            let floorInt = parseInt(curLength)
             return {
-              ...item,
-              value: dataList1[index].value * curPercent
+              value: dataList1[floorInt].value + (dataList1[floorInt + 1].value - dataList1[floorInt].value) * (curLength % 1),
+              y: curLength
             }
           }))
         })
@@ -115,31 +125,37 @@ export function loadD3AndDraw(svgElement, dataList) {
 
     }
 
+    let circleFlag = {}
+
     function drawLineChart() {
       //折线
       svg.append('path')
-        .datum(startData)
+        .datum(startData1)
         .attr('class', 'line')
         .attr('d', line)
         .transition()
-        .duration(1000)
-        .attrTween('d', datum => cur => {
-            return line(datum.map((item, index) => {
+        .duration(1500)
+        .attrTween('d', () => curPercent => {
+            let curLength = (dataList1.length - 1) * curPercent
+            let pointY = d3Array.range(Math.ceil(curLength) + 1)
+            return line(pointY.map(i => {
+              if (i <= curLength) {
+                return {
+                  value: dataList1[i].value, y: i
+                }
+              }
+              let floorInt = Math.floor(curLength)
+              if (!circleFlag[floorInt]) {
+                drawCircle(dataList1[floorInt], floorInt)
+                circleFlag[floorInt] = true
+              }
               return {
-                ...item, value: dataList1[index].value * cur
+                value: dataList1[floorInt].value + (dataList1[floorInt + 1].value - dataList1[floorInt].value) * (curLength % 1),
+                y: curLength
               }
             }))
           }
         )
-        .on('end', () => {
-          drawCircles()
-        })
-    }
-
-    function drawCircles() {
-      dataList1.forEach((dataItem, index) => {
-        drawCircle(dataItem, index)
-      })
     }
 
     function drawCircle(dataItem, index) {
@@ -149,9 +165,6 @@ export function loadD3AndDraw(svgElement, dataList) {
         .attr('class', 'line-circle-outer')
         .attr('cx', scaleX(dataItem.value))
         .attr('cy', scaleY(index))
-        .attr('r', 0)
-        .transition()
-        .delay(200 * index)
         .attr('r', 3)
 
       g.append('text')
@@ -161,9 +174,6 @@ export function loadD3AndDraw(svgElement, dataList) {
           return `rotate(90 ${scaleX(dataItem.value) + 10} ${scaleY(index)})`
         })
         .attr('class', 'current-value-text')
-        .text('')
-        .transition()
-        .delay(200 * index)
         .text(dataItem.text)
 
     }
