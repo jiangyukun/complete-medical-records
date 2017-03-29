@@ -2,6 +2,7 @@
  * Created by jiangyukun on 2017/3/20.
  */
 import React from 'react'
+import classnames from 'classnames'
 
 class IconNav extends React.Component {
 
@@ -9,7 +10,7 @@ class IconNav extends React.Component {
     return (
       <div className="icon-nav">
         <div className="profile-icon">
-          <i className={this.props.iconClassName}></i>
+          <i className={classnames('icon', this.props.iconClassName)}></i>
         </div>
       </div>
     )

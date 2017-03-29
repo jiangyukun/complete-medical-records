@@ -4,6 +4,7 @@
 import React from 'react'
 
 import {Item, IconNav, ItemContent} from '../../../component/'
+import {getText} from '../../../helper/utils'
 
 class DeliverTime extends React.Component {
   render() {
@@ -14,7 +15,7 @@ class DeliverTime extends React.Component {
           <header>分娩时间</header>
           <div className="content-item">
             <div className="mt-7">
-              {this.props.deliverTime}
+              {getText(this.props.deliverTime)}
             </div>
           </div>
         </ItemContent>

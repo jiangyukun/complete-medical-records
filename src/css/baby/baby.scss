@@ -1,25 +1,22 @@
 @import "../mixins.scss";
 
-.baby {
-    .footer-nav {
-        display: flex;
-        .basic-info, .combined-immunization, .analysis-result {
-            line-height: 1.4;
-            flex: 1;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: nowrap;
-            padding: 1.1rem 0;
-            @include dpr(font-size, 15px);
-            text-align: center;
-            opacity: 0.5;
-            &.active {
-                opacity: 1;
-            }
-        }
-    }
+.baby-deliver-time {
+    display: inline-block;
+    background-image: url("../../../img/26.svg");
+    background-size: cover;
+    width: 3rem;
+    height: 3rem;
 }
 
-@import "./baby-basic-info.scss";
-@import "./baby-combined-immunization.scss";
-@import "./baby-laboratory-result.scss";
+.laboratory-result-item {
+    background: #fff;
+    margin-top: 2rem;
+}
+
+.baby-laboratory-result-page {
+    background-color: #f1f7fc;
+    .check-date {
+        color: #8a94a6;
+        @include font-size(13px)
+    }
+}

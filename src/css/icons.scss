@@ -1,0 +1,142 @@
+@mixin background_icon() {
+    display: inline-block;
+    background-size: cover;
+    width: 3rem;
+    height: 3rem;
+}
+
+.star-icon {
+    background-image: url("../../img/star-1.svg");
+    display: inline-block;
+    background-size: cover;
+    width: 1.4rem;
+    height: 1.4rem;
+}
+
+.plus-icon {
+    background-image: url("../../img/18.svg");
+    display: inline-block;
+    background-size: cover;
+    width: 1.8rem;
+    height: 1.8rem;
+}
+
+.minus-icon {
+    background-image: url("../../img/19.svg");
+    display: inline-block;
+    background-size: cover;
+    width: 1.8rem;
+    height: 1.8rem;
+}
+
+.profile-icon-1 {
+    background-image: url("../../img/1.svg");
+    @include background_icon();
+}
+
+.profile-icon-2 {
+    background-image: url("../../img/2.svg");
+    @include background_icon();
+}
+
+.profile-icon-3 {
+    background-image: url("../../img/3.svg");
+    @include background_icon();
+}
+
+.profile-icon-4 {
+    background-image: url("../../img/4.svg");
+    @include background_icon();
+}
+
+.profile-icon-5 {
+    background-image: url("../../img/5.svg");
+    @include background_icon();
+}
+
+.liver-icon-1 {
+    background-image: url("../../img/6.svg");
+    @include background_icon();
+}
+
+.liver-icon-2 {
+    background-image: url("../../img/7.svg");
+    @include background_icon();
+}
+
+.liver-icon-3 {
+    background-image: url("../../img/8.svg");
+    @include background_icon();
+}
+
+.obstetric-icon-1 {
+    background-image: url("../../img/10.svg");
+    @include background_icon();
+}
+
+.obstetric-icon-2 {
+    background-image: url("../../img/11.svg");
+    @include background_icon();
+}
+
+.obstetric-icon-3 {
+    background-image: url("../../img/12.svg");
+    @include background_icon();
+}
+
+.analysis-result-1 {
+    background-image: url("../../img/15.svg");
+    @include background_icon();
+}
+
+.analysis-result-2 {
+    background-image: url("../../img/21.svg");
+    @include background_icon();
+}
+
+//宝宝
+
+.profile-basic-icon {
+    background-image: url("../../img/22.svg");
+    @include background_icon();
+}
+
+.breast-milk-feed {
+    background-image: url("../../img/23.svg");
+    @include background_icon();
+}
+
+.baby-july-situation {
+    background-image: url("../../img/24.svg");
+    @include background_icon();
+}
+
+.block-birthing-icon {
+    background-image: url("../../img/25.svg");
+    @include background_icon();
+}
+
+.first-dose-icon {
+    background-image: url("../../img/a.svg");
+    @include background_icon();
+}
+
+.second-dose-icon {
+    background-image: url("../../img/b.svg");
+    @include background_icon();
+}
+
+.third-dose-icon {
+    background-image: url("../../img/c.svg");
+    @include background_icon();
+}
+
+.supplement-icon {
+    background-image: url("../../img/2-circle.svg");
+    @include background_icon();
+}
+
+.hbv-dna-icon {
+    background-image: url("../../img/15.svg");
+    @include background_icon();
+}

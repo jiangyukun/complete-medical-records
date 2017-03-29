@@ -33,13 +33,13 @@ class BabyPage extends React.Component {
           )
         }
         <footer className="footer-nav">
-          <div className={classnames('basic-info', {'active': this.state.current == 1})} onClick={() => this.setState({current: 1})}>
+          <div className={classnames('nav-item', {'active': this.state.current == 1})} onClick={() => this.setState({current: 1})}>
             基本信息
           </div>
-          <div className={classnames('combined-immunization', {'active': this.state.current == 2})} onClick={() => this.setState({current: 2})}>
+          <div className={classnames('nav-item', {'active': this.state.current == 2})} onClick={() => this.setState({current: 2})}>
             联合免疫情况
           </div>
-          <div className={classnames('analysis-result', {'active': this.state.current == 3})} onClick={() => this.setState({current: 3})}>
+          <div className={classnames('nav-item', {'active': this.state.current == 3})} onClick={() => this.setState({current: 3})}>
             化验结果
           </div>
         </footer>

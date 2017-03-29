@@ -1,0 +1,45 @@
+@media screen and (max-device-width: 320px) {
+    .icon-nav {
+        width: 4rem;
+    }
+
+    .profile-icon {
+        width: 4rem;
+    }
+
+    .vertical-line {
+        left: 2rem;
+    }
+
+    .small-circle-container {
+        left: 1.5rem;
+    }
+
+    .table-list {
+        .head {
+            padding: 1rem 1rem;
+        }
+        .row {
+            padding: 2.5rem 1rem 0.75rem;
+            .item {
+                text-align: center;
+            }
+        }
+
+        .row-desc {
+            width: 6.4rem;
+        }
+    }
+
+    .profile-for-reference-only {
+        .star-icon-container {
+            width: 4rem;
+        }
+    }
+
+    .icon {
+        width: 2.4rem;
+        height: 2.4rem;
+    }
+
+}

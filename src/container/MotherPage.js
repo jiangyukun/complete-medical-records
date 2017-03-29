@@ -18,45 +18,37 @@ class MotherPage extends React.Component {
   render() {
     return (
       <div className="mother">
-        <div className={classnames('page-container', {'hidden': this.state.current != 1})}>
-          {
-            this.state.current == 1 && (
-              <BasicInfo/>
-            )
-          }
-        </div>
-        <div className={classnames('page-container', {'hidden': this.state.current != 2})}>
-          {
-            this.state.current == 2 && (
-              <TreatSituation/>
-            )
-          }
-        </div>
-        <div className={classnames('page-container', {'hidden': this.state.current != 3})}>
-          {
-            this.state.current == 3 && (
-              <ObstetricExamination/>
-            )
-          }
-        </div>
-        <div className={classnames('page-container', {'hidden': this.state.current != 4})}>
-          {
-            this.state.current == 4 && (
-              <AnalysisResult/>
-            )
-          }
-        </div>
+        {
+          this.state.current == 1 && (
+            <BasicInfo/>
+          )
+        }
+        {
+          this.state.current == 2 && (
+            <TreatSituation/>
+          )
+        }
+        {
+          this.state.current == 3 && (
+            <ObstetricExamination/>
+          )
+        }
+        {
+          this.state.current == 4 && (
+            <AnalysisResult/>
+          )
+        }
         <footer className="footer-nav">
-          <div className={classnames('basic-info', {'active': this.state.current == 1})} onClick={() => this.setState({current: 1})}>
+          <div className={classnames('nav-item', {'active': this.state.current == 1})} onClick={() => this.setState({current: 1})}>
             基本信息
           </div>
-          <div className={classnames('treat-situation', {'active': this.state.current == 2})} onClick={() => this.setState({current: 2})}>
+          <div className={classnames('nav-item', {'active': this.state.current == 2})} onClick={() => this.setState({current: 2})}>
             治疗情况
           </div>
-          <div className={classnames('obstetric-check', {'active': this.state.current == 3})} onClick={() => this.setState({current: 3})}>
+          <div className={classnames('nav-item', {'active': this.state.current == 3})} onClick={() => this.setState({current: 3})}>
             产科检查
           </div>
-          <div className={classnames('analysis-result', {'active': this.state.current == 4})} onClick={() => this.setState({current: 4})}>
+          <div className={classnames('nav-item', {'active': this.state.current == 4})} onClick={() => this.setState({current: 4})}>
             化验结果
           </div>
         </footer>

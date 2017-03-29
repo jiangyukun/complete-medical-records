@@ -22,7 +22,7 @@ class ProfileHepatitisB extends React.Component {
               <span>亲属中乙肝病毒感染者：{getText(baseInfo['infected_Family_Members'])}</span>
             </div>
             <div className="mt-7">
-              <span>合并感染情况：{getText(baseInfo['merge_Info'])}</span>
+              <span>合并感染情况：{getText(this.props.motherBasicInfo['merge_Info'])}</span>
             </div>
           </div>
         </ItemContent>

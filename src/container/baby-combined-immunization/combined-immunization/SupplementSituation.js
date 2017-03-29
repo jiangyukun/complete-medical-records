@@ -10,20 +10,17 @@ class SupplementSituation extends React.Component {
   render() {
     const supplementSituation = this.props.supplementSituation || []
 
+    if (supplementSituation.length == 0) {
+      return null
+    }
+
     return (
       <Item className="item-padding">
         <IconNav iconClassName="supplement-icon"/>
         <ItemContent>
           <header>补充接种情况</header>
           {
-            supplementSituation.length == 0 && (
-              <div className="content-item">
-                无补充接种情况
-              </div>
-            )
-          }
-          {
-            supplementSituation.length != 0 && supplementSituation.map((item, index) => {
+            supplementSituation.map((item, index) => {
               return (
                 <div key={index} className="content-item">
                   <div className="mt-7">

@@ -10,30 +10,6 @@
     overflow: hidden;
 }
 
-.star-icon {
-    display: inline-block;
-    background-image: url("../../img/star-1.svg");
-    background-size: cover;
-    width: 1.4rem;
-    height: 1.4rem;
-}
-
-.plus-icon {
-    display: inline-block;
-    background-image: url("../../img/18.svg");
-    background-size: cover;
-    width: 1.8rem;
-    height: 1.8rem;
-}
-
-.minus-icon {
-    display: inline-block;
-    background-image: url("../../img/19.svg");
-    background-size: cover;
-    width: 1.8rem;
-    height: 1.8rem;
-}
-
 .content-wrap {
     margin-top: 2rem;
     margin-bottom: 5rem;
@@ -117,8 +93,23 @@
     left: 0;
     right: 0;
     z-index: 1;
+    display: flex;
     border-radius: 1px;
     background-color: #f8f9f9;
+    .nav-item {
+        line-height: 1.4;
+        flex: 1;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        padding: 1.1rem 0;
+        @include font-size(15px);
+        text-align: center;
+        opacity: 0.5;
+        &.active {
+            opacity: 1;
+        }
+    }
 }
 
 .small-circle-container {

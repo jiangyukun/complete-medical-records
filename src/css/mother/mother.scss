@@ -1,25 +1,21 @@
 @import "../mixins.scss";
 
-.mother {
-    @import './basic-info.scss';
-    @import './liver-protection-medicine.scss';
-    @import './analysis-result.scss';
-    @import './obstetric-examination.scss';
-    .footer-nav {
-        display: flex;
-        .basic-info, .treat-situation, .obstetric-check, .analysis-result {
-            line-height: 1.4;
-            flex: 1;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: nowrap;
-            padding: 1.1rem 0;
-            @include font-size(15px);
-            text-align: center;
-            opacity: 0.5;
-            &.active {
-                opacity: 1;
-            }
-        }
+.profile-hepatitis-b, .profile-pregnant, .profile-deliver, .profile-queue-complete {
+    padding-top: 1.2rem;
+}
+
+.visit-type-2, .visit-type-3 {
+    padding-top: 2.6rem;
+}
+
+.content-wrap.analysis-result-page {
+    margin-top: 0;
+}
+
+.analysis-result-page {
+    background-color: #f1f7fc;
+    .check-date {
+        color: #8a94a6;
+        @include font-size(13px)
     }
 }
