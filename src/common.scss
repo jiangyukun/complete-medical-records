@@ -23,7 +23,6 @@ html[data-dpr="3"] {
 }
 
 body {
-    font-size: 14px;
     @include dpr(font-size, 14px);
 }
 
@@ -53,4 +52,8 @@ body {
 
 .rotate90 {
     transform: rotate(90deg);
+}
+
+.full-parent {
+    height: 100%;
 }

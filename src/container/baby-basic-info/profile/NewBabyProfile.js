@@ -4,6 +4,7 @@
 import React from 'react'
 
 import {Item, IconNav, ItemContent} from '../../../component/'
+import {getText} from '../../../helper/utils'
 
 class NewBabyProfile extends React.Component {
   render() {
@@ -17,22 +18,22 @@ class NewBabyProfile extends React.Component {
           <div className="content-item">
             <div className="flex mt-7">
               <div className="flex1">
-                <span>体重：{babyBasicInfo['weight']}g</span>
+                <span>体重：{getText(babyBasicInfo['weight'])}</span>
               </div>
               <div className="flex1">
-                <span>身高： {babyBasicInfo['height']} cm</span>
+                <span>身高： {getText(babyBasicInfo['height'])}</span>
               </div>
             </div>
             <div className="flex mt-7">
               <div className="flex1">
-                <span>头围：{babyBasicInfo['head_Circumference']} cm</span>
+                <span>头围：{getText(babyBasicInfo['head_Circumference'])}</span>
               </div>
               <div className="flex1">
-                <span>Apgar评分：{babyBasicInfo['apgar']}</span>
+                <span>Apgar评分：{getText(babyBasicInfo['apgar'])}</span>
               </div>
             </div>
             <div className="mt-7">
-              出生缺陷： {babyBasicInfo['physiological_Defect']}
+              出生缺陷： {getText(babyBasicInfo['physiological_Defect'])}
             </div>
           </div>
         </ItemContent>

@@ -8,5 +8,22 @@ if (dpr > 3) {
 
 export let motherPageStart = 1
 if (process.env.NODE_ENV != 'production') {
-  motherPageStart = 3
+  motherPageStart = 4
+}
+
+
+export let babyPageStart = 1
+if (process.env.NODE_ENV != 'production') {
+  babyPageStart = 2
+}
+
+let httpToken = ''
+
+export function getToken() {
+  return httpToken
+}
+
+export function setToken(token) {
+  httpToken = token
+  return httpToken
 }

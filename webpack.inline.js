@@ -29,9 +29,9 @@ module.exports = {
   module: {
     loaders: [
       {test: /\.js$/, loaders: ['react-hot-loader', 'babel-loader'], exclude: /node_modules/, include: __dirname},
-      {test: /\.scss$/, loaders: ['style-loader', 'css-loader', 'sass-loader']},
-      {test: /\.(jpg|png)$/, loader: "url-loader?limit=8192"},
-      {test: /\.(eot|woff|woff2|svg|ttf)([\?]?.*)$/, loader: "file-loader"}
+      {test: /\.scss$/, loaders: ['style-loader', 'css-loader', 'postcss-loader', 'sass-loader']},
+      {test: /\.(jpg|png|svg)$/, loader: "url-loader?limit=8192"},
+      {test: /\.(eot|woff|woff2|ttf)([\?]?.*)$/, loader: "file-loader"}
     ]
   }
 }

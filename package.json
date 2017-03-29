@@ -51,7 +51,12 @@
   "dependencies": {
     "babel-polyfill": "^6.23.0",
     "classnames": "^2.2.5",
-    "d3": "^4.7.3",
+    "d3-array": "^1.1.1",
+    "d3-color": "^1.0.3",
+    "d3-scale": "^1.0.5",
+    "d3-selection": "^1.0.5",
+    "d3-shape": "^1.0.6",
+    "d3-transition": "^1.0.4",
     "dom-helpers": "^3.2.1",
     "immutable": "^3.8.1",
     "isomorphic-fetch": "^2.2.1",

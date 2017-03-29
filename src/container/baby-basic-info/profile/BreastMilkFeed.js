@@ -5,6 +5,7 @@
 import React from 'react'
 
 import {Item, IconNav, ItemContent} from '../../../component/'
+import {getText} from '../../../helper/utils'
 
 class BreastMilkFeed extends React.Component {
   render() {
@@ -17,7 +18,7 @@ class BreastMilkFeed extends React.Component {
           <header>母乳喂养情况</header>
           <div className="content-item">
             <div className="mt-7">
-              {babyBasicInfo['breast_Feed']}
+              {getText(babyBasicInfo['breast_Feed'])}
             </div>
           </div>
         </ItemContent>

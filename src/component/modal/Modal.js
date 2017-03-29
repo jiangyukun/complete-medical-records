@@ -28,7 +28,7 @@ class Modal extends Component {
       <div className="modal">
         <div className={classnames('mask', this.props.show ? 'open' : 'close')} onClick={this.onHide}></div>
         <div className="modal-container">
-          <div className={classnames('modal-content', this.props.show ? 'open' : 'close')}>
+          <div className={classnames('modal-content', this.props.className, this.props.show ? 'open' : 'close')}>
             {this.props.children}
           </div>
         </div>

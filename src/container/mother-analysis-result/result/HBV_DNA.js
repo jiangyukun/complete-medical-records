@@ -43,6 +43,11 @@ class HBV_DNA extends React.Component {
         <ItemContent className="no-border">
           <header>HBV-DNA检查</header>
           {
+            !hbvDnaList || hbvDnaList.length == 0 && (
+              <div className="content-item">无HBV-DNA检查记录</div>
+            )
+          }
+          {
             hbvDnaList.map((hbvDna, index) => {
               return (
                 <div key={index} className="content-item">

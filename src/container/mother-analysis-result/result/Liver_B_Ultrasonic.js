@@ -8,7 +8,7 @@ import VerticalLine from '../../../component/VerticalLine'
 
 class Liver_B_Ultrasonic extends React.Component {
   render() {
-    const {liverBUltrasonic}  = this.props
+    let {liverBUltrasonic} = this.props
 
     return (
       <Item className="analysis-result-item" verticalLine={false}>
@@ -20,6 +20,13 @@ class Liver_B_Ultrasonic extends React.Component {
           <IconNav iconClassName="analysis-result-2"/>
           <ItemContent>
             <header>肝脏B超</header>
+            {
+              !liverBUltrasonic || liverBUltrasonic.length == 0 && (
+                <div className="content-item">
+                  无肝脏B超检查记录
+                </div>
+              )
+            }
             {
               liverBUltrasonic.map((item, index) => {
                 return (

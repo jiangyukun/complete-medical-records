@@ -17,9 +17,9 @@ class ObstetricExamination extends React.Component {
   }
 
   render() {
-    const visit1 = this.props.obstetricExamination['visitOneVo']
-    const visit2 = this.props.obstetricExamination['visitTwoVo']
-    const visit3 = this.props.obstetricExamination['visitThereVo']
+    const visit1 = this.props.obstetricExamination['visitOneVo'] || {}
+    const visit2 = this.props.obstetricExamination['visitTwoVo'] || {}
+    const visit3 = this.props.obstetricExamination['visitThereVo'] || {}
     return (
       <div className="content-wrap">
         <Visit1 visit1={visit1}/>

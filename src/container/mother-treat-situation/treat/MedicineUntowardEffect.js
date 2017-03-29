@@ -33,7 +33,7 @@ class MedicineUntowardEffect extends React.Component {
                 </div>
               )
             }) : (
-              <div className="content-item">暂无不良反应记录</div>
+              <div className="content-item">无不良反应记录</div>
             )
           }
         </ItemContent>

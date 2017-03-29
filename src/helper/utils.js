@@ -30,7 +30,6 @@ export function bodyParam(paramObj) {
 /**
  * 将url地址转化为key value对象
  * @param url
- * @returns {{}}
  */
 export function urlParams(url) {
   let result = {}
@@ -57,7 +56,6 @@ export function getText(value) {
   return value
 }
 
-
 export function isEmpty(item) {
   return !item || item == '未知'
 }
@@ -70,4 +68,23 @@ export function isAllEmpty(...args) {
     }
   })
   return allEmpty
+}
+
+export const check = {
+  yes(checkItem) {
+    return checkItem == '是'
+  },
+  no(checkItem) {
+    return checkItem == '否'
+  },
+  empty(checkItem) {
+    return checkItem == '' || checkItem == null || checkItem == undefined
+  }
+}
+
+export function getStartEndDate(startDate, endDate) {
+  if (!startDate && !endDate) {
+    return '未知'
+  }
+  return (startDate || '未知') + ' ~ ' + (endDate || '未知')
 }

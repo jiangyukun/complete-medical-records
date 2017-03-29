@@ -41,18 +41,22 @@
 @keyframes slide-down {
     from {
         transform: translateY(-200px);
+        opacity: 0;
     }
     to {
         transform: translateY(0);
+        opacity: 1;
     }
 }
 
 @keyframes slide-up {
     from {
         transform: translateY(0);
+        opacity: 1;
     }
     to {
         transform: translateY(-200px);
+        opacity: 0;
     }
 }
 

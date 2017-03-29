@@ -3,6 +3,7 @@
  */
 import React from 'react'
 
+import {Item, IconNav, ItemContent} from '../../../component/'
 import {getText, isEmpty} from '../../../helper/utils'
 
 class ProfileQueueComplete extends React.Component {
@@ -11,17 +12,15 @@ class ProfileQueueComplete extends React.Component {
     const {motherBasicInfo} = this.props
     const baseInfo = motherBasicInfo['baseInfo'] || {}
     const isYesOrUnknown = isEmpty(baseInfo['completed']) || baseInfo['completed'] == '是'
+
     return (
-      <section className="profile-queue-complete">
-        <div className="vertical-line"></div>
-        <div className="profile-icon">
-          <i className="profile-icon-5"></i>
-        </div>
-        <div className="profile-item-description">
+      <Item className="item-padding">
+        <IconNav iconClassName="profile-icon-5"/>
+        <ItemContent>
           <header>队列完成情况</header>
           {
             isYesOrUnknown && (
-              <div className="profile-items">
+              <div className="content-item">
                 <div>
                   <span>是否完成队列： {getText(baseInfo['completed'])}</span>
                 </div>
@@ -30,7 +29,7 @@ class ProfileQueueComplete extends React.Component {
           }
           {
             !isYesOrUnknown && (
-              <div className="profile-items">
+              <div className="content-item">
                 <div>
                   <span>是否完成队列： {getText(baseInfo['completed'])}</span>
                 </div>
@@ -43,8 +42,9 @@ class ProfileQueueComplete extends React.Component {
               </div>
             )
           }
-        </div>
-      </section>
+        </ItemContent>
+
+      </Item>
     )
   }
 }

@@ -3,6 +3,7 @@
  */
 import React from 'react'
 
+import {Item, IconNav, ItemContent} from '../../../component/'
 import {getText} from '../../../helper/utils'
 
 class ProfilePregnant extends React.Component {
@@ -11,14 +12,12 @@ class ProfilePregnant extends React.Component {
     const {motherBasicInfo} = this.props
     const baseInfo = motherBasicInfo['baseInfo'] || {}
     return (
-      <section className="profile-pregnant">
-        <div className="vertical-line"></div>
-        <div className="profile-icon">
-          <i className="profile-icon-3"></i>
-        </div>
-        <div className="profile-item-description">
+      <Item className="item-padding">
+
+        <IconNav iconClassName="profile-icon-3"/>
+        <ItemContent>
           <header>孕产期</header>
-          <div className="profile-items">
+          <div className="content-item">
             <span>末次月经日期： {getText(baseInfo['last_Menstruation_Date'])}</span>
             <div className="mt-7">
               <span>预产期： {getText(baseInfo['expected_Time'])}</span>
@@ -35,8 +34,9 @@ class ProfilePregnant extends React.Component {
               <span>是否有子女感染： {getText(baseInfo['is_Children_Infected'])}</span>
             </div>
           </div>
-        </div>
-      </section>
+        </ItemContent>
+
+      </Item>
     )
   }
 }

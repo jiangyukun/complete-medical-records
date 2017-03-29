@@ -2,6 +2,7 @@
  * Created by jiangyukun on 2016/11/26.
  */
 import {bodyParam} from '../helper/utils'
+import {getToken} from '../constants/constants'
 
 function preHandle(url, option) {
   if (process.env.NODE_ENV != 'dev') {
@@ -25,9 +26,10 @@ function preHandle(url, option) {
     method: option.method,
     credentials: 'include',
     headers: {
-      'ajax': 'ajax',
-      'Accept': 'application/json;charset=utf-8',
-      'Content-Type': contentType
+      "ajax": "ajax",
+      "token": getToken(),
+      "Accept": "application/json;charset=utf-8",
+      "Content-Type": contentType
     }
   }
 

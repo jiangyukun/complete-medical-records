@@ -8,7 +8,10 @@ import {TableList, Head, Row, Desc, Item} from '../../../component/table-list/'
 class Part3 extends React.Component {
 
   render() {
-    const {part3} = this.props
+    let {part3} = this.props
+    if (!part3 || part3.length == 0) {
+      return <div className="check-item-empty">无乙肝五项检查记录</div>
+    }
 
     return (
       <TableList>

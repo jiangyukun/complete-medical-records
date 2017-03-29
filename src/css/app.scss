@@ -73,7 +73,6 @@
 
     .content-item {
         @include dpr(font-size, 13px);
-        font-size: 13px;
         color: #8a94a6;
         > header {
             padding: 1.2rem 0 1.4rem 0;
@@ -175,4 +174,9 @@
     position: relative;
     margin-top: 2rem;
     display: flex;
+}
+
+.check-item-empty {
+    color: #8a94a6;
+    padding: 1rem 3rem;
 }

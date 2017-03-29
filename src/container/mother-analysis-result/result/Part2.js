@@ -4,11 +4,15 @@
 import React from 'react'
 
 import {TableList, Head, Row, Desc, Item} from '../../../component/table-list/'
+import {getText} from '../../../helper/utils'
 
 class Part2 extends React.Component {
 
   render() {
-    const {part2} = this.props
+    let {part2} = this.props
+    if (!part2 || part2.length == 0) {
+      return <div className="check-item-empty">无肝功能检查记录</div>
+    }
 
     return (
       <TableList>
@@ -28,11 +32,11 @@ class Part2 extends React.Component {
                   <div className="period-name-desc">{item['pregnancy_States']}</div>
                   <div className="period-time">{item['check_Liver_Check_Date']}</div>
                 </Desc>
-                <Item>{item['liver_ALT_Result']}</Item>
-                <Item>{item['liver_AST_Result']}</Item>
-                <Item>{item['liver_TBIL_Result']}</Item>
-                <Item>{item['liver_DBIL_Result']}</Item>
-                <Item>{item['liver_ALB_Result']}</Item>
+                <Item>{getText(item['liver_ALT_Result'])}</Item>
+                <Item>{getText(item['liver_AST_Result'])}</Item>
+                <Item>{getText(item['liver_TBIL_Result'])}</Item>
+                <Item>{getText(item['liver_DBIL_Result'])}</Item>
+                <Item>{getText(item['liver_ALB_Result'])}</Item>
               </Row>
             )
           })

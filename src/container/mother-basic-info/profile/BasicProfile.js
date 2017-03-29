@@ -3,6 +3,7 @@
  */
 import React from 'react'
 
+import {Item, IconNav, ItemContent} from '../../../component/'
 import {getText} from '../../../helper/utils'
 
 class BasicProfile extends React.Component {
@@ -11,14 +12,11 @@ class BasicProfile extends React.Component {
     const motherBasicInfo = this.props.motherBasicInfo
     const baseInfo = motherBasicInfo['baseInfo'] || {}
     return (
-      <section className="profile-basic">
-        <div className="profile-icon">
-          <i className="profile-icon-1"></i>
-          <div className="vertical-line"></div>
-        </div>
-        <div className="profile-item-description">
+      <Item>
+        <IconNav iconClassName="profile-icon-1"/>
+        <ItemContent>
           <header>一般情况和生命体征</header>
-          <div className="profile-items">
+          <div className="content-item">
             <div className="flex">
               <div className="flex1">
                 <span>姓名：{getText(baseInfo['real_Name'])}</span>
@@ -31,8 +29,8 @@ class BasicProfile extends React.Component {
               <span>出生日期：{getText(baseInfo['birth_Date'])}</span>
             </div>
           </div>
-        </div>
-      </section>
+        </ItemContent>
+      </Item>
     )
   }
 }

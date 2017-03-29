@@ -39,7 +39,6 @@ class AnalysisResult extends React.Component {
 }
 
 function mapStateToProps(state) {
-  // console.log(state['analysisResult'])
   return {
     analysisResult: state['analysisResult']
   }

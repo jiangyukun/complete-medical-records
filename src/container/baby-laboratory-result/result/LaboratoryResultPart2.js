@@ -10,6 +10,10 @@ class LaboratoryResultPart2 extends React.Component {
   render() {
     const {part2List} = this.props
 
+    if (part2List.length == 0) {
+      return <div className="check-item-empty">无乙肝五项检查记录</div>
+    }
+
     return (
       <TableList>
         <Head>

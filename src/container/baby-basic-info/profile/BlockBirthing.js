@@ -5,6 +5,7 @@
 import React from 'react'
 
 import {Item, IconNav, ItemContent} from '../../../component/'
+import {getText} from '../../../helper/utils'
 
 class BlockBirthing extends React.Component {
   render() {
@@ -17,7 +18,7 @@ class BlockBirthing extends React.Component {
           <header>母婴阻断结果</header>
           <div className="content-item">
             <div className="mt-7">
-              {babyBasicInfo['blocking_Results']}
+              {getText(babyBasicInfo['blocking_Results'])}
             </div>
           </div>
         </ItemContent>

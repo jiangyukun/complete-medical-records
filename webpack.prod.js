@@ -19,8 +19,8 @@ module.exports = {
     loaders: [
       {test: /\.js$/, loaders: ['babel-loader'], exclude: /node_modules/, include: __dirname},
       {test: /\.scss$/, loader: ExtractTextPlugin.extract({fallback: 'style-loader', use: ['css-loader', 'postcss-loader', 'sass-loader']})},
-      {test: /\.(jpg|png)$/, loader: "url-loader?limit=8192"},
-      {test: /\.(eot|woff|woff2|svg|ttf)([\?]?.*)$/, loader: "file-loader"}
+      {test: /\.(jpg|png|svg)$/, loader: "url-loader?limit=8192"},
+      {test: /\.(eot|woff|woff2|ttf)([\?]?.*)$/, loader: "file-loader"}
     ]
   },
 
@@ -31,7 +31,7 @@ module.exports = {
       manifest: require('./manifest.json'),
     }),
     new webpack.DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify('production')
+      'process.env.NODE_ENV': '"production"'
     }),
     new webpack.optimize.UglifyJsPlugin({
       compress: {

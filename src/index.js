@@ -5,7 +5,7 @@ import 'babel-polyfill'
 import 'isomorphic-fetch'
 import React from 'react'
 import {render} from 'react-dom'
-import {createStore, applyMiddleware, compose} from 'redux'
+import {createStore, applyMiddleware} from 'redux'
 import createSagaMiddleware from 'redux-saga'
 
 import './common.scss'
@@ -16,14 +16,14 @@ import './css/mother/mother.scss'
 import './css/baby/baby.scss'
 
 import Root from './container/Root'
-import DevTools from './container/devtools/DevTools'
 import rootSaga from './sagas/'
 import allReducers from './reducer/'
 import * as utils from './helper/utils'
 import {dpr} from './constants/constants'
+import {setToken} from './constants/constants'
 
 let sagaMiddleware = createSagaMiddleware()
-let store = createStore(allReducers, {}, compose(applyMiddleware(sagaMiddleware), DevTools.instrument()))
+let store = createStore(allReducers, {}, applyMiddleware(sagaMiddleware))
 sagaMiddleware.run(rootSaga)
 
 let isMotherMatched = /\/mother/.test(location.href)
@@ -40,6 +40,7 @@ if (!isMotherMatched && !babyId) {
   alert('无babyId参数')
 }
 
+setToken(token)
 store.dispatch({
   type: 'PAGE_INIT', isMotherMatched, token, mobile, babyId
 })
