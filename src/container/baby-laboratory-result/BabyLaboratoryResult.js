@@ -24,7 +24,7 @@ class BabyLaboratoryResult extends React.Component {
     return (
       <div className="content-wrap baby-laboratory-result-page">
         <Baby_HBV_DNA hbvDnaList={hbvDnaList}/>
-        <div className="result-part-2">
+        <div className="result-part-2 has-border">
           <LaboratoryResultPart2 part2List={part2List}/>
         </div>
         <ForReferenceOnly verticalLine={false} className="bg-white"/>

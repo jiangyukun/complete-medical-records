@@ -8,7 +8,7 @@ import {check, getText} from '../../../helper/utils'
 
 class SecondDose extends React.Component {
   render() {
-    const {secondDose} = this.props
+    const secondDose = this.props.secondDose || {}
 
     return (
       <Item className="item-padding">

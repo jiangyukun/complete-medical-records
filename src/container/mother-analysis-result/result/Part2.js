@@ -9,8 +9,8 @@ import {getText} from '../../../helper/utils'
 class Part2 extends React.Component {
 
   render() {
-    let {part2} = this.props
-    if (!part2 || part2.length == 0) {
+    let part2 = this.props.part2 || []
+    if (part2.length == 0) {
       return <div className="check-item-empty">无肝功能检查记录</div>
     }
 

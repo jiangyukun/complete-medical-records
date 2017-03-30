@@ -2,7 +2,7 @@
  * Created by jiangyukun on 2017/3/23.
  */
 
-import {dpr} from "../../constants/constants"
+import {dpr} from '../../constants/constants'
 
 export function loadD3AndDraw(svgElement, dataList) {
   const dataList1 = dataList.map(d => {
@@ -23,12 +23,6 @@ export function loadD3AndDraw(svgElement, dataList) {
       ...d,
       value: v,
       text: d.value
-    }
-  })
-
-  const startData = dataList1.map(d => {
-    return {
-      ...d, value: 0
     }
   })
 
@@ -69,6 +63,7 @@ export function loadD3AndDraw(svgElement, dataList) {
     drawAxisText()
 
     function drawBackgroundGradientColor() {
+      if (dataList1.length == 0) return
 
       //  颜色渐变
       svg.append('path')
@@ -77,7 +72,7 @@ export function loadD3AndDraw(svgElement, dataList) {
         .style("fill", "url(#linearColor)")
         .attr('d', area)
         .transition()
-        .duration(1500)
+        .duration((dataList1.length - 1) * 500)
         .attrTween('d', () => curPercent => {
           let curLength = (dataList1.length - 1) * curPercent
           let pointY = d3Array.range(Math.ceil(curLength) + 1)
@@ -94,11 +89,9 @@ export function loadD3AndDraw(svgElement, dataList) {
             }
           }))
         })
-
     }
 
     function drawLines() {
-
       let xLines = svg.append('g')
       xLines.selectAll('line')
         .data(d3Array.range(dataList1.length))
@@ -121,25 +114,28 @@ export function loadD3AndDraw(svgElement, dataList) {
         .attr('y1', 75)
         .attr('y2', viewBoxHeight - 40)
         .attr('class', 'x-line')
-
-
     }
 
     let circleFlag = {}
 
     function drawLineChart() {
+      if (dataList1.length == 0) return
       //折线
       svg.append('path')
         .datum(startData1)
         .attr('class', 'line')
         .attr('d', line)
         .transition()
-        .duration(1500)
+        .duration((dataList1.length - 1) * 500)
         .attrTween('d', () => curPercent => {
             let curLength = (dataList1.length - 1) * curPercent
             let pointY = d3Array.range(Math.ceil(curLength) + 1)
             return line(pointY.map(i => {
               if (i <= curLength) {
+                if (i == curLength && !circleFlag[i]) {
+                  drawCircle(dataList1[i], i)
+                  circleFlag[i] = true
+                }
                 return {
                   value: dataList1[i].value, y: i
                 }

@@ -8,7 +8,7 @@ import VerticalLine from '../../../component/VerticalLine'
 
 class Liver_B_Ultrasonic extends React.Component {
   render() {
-    let {liverBUltrasonic} = this.props
+    let liverBUltrasonic = this.props.liverBUltrasonic || []
 
     return (
       <Item className="analysis-result-item" verticalLine={false}>

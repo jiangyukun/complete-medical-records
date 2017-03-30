@@ -4,11 +4,12 @@
 import React from 'react'
 
 import {Item, IconNav, ItemContent} from '../../../component/'
+import {getText, getStartEndDate} from '../../../helper/utils'
 
 class AntiVirusMedicine extends React.Component {
   render() {
-    const antiVirusMedicine = this.props.antiVirusMedicine
-    const isEmpty = antiVirusMedicine || antiVirusMedicine.length == 0
+    const antiVirusMedicine = this.props.antiVirusMedicine || []
+    const isEmpty = !antiVirusMedicine || antiVirusMedicine.length == 0
 
     return (
       <Item>
@@ -23,25 +24,24 @@ class AntiVirusMedicine extends React.Component {
             )
           }
           {
-            !isEmpty && this.props.antiVirusMedicine.map((antiVirus, index) => {
+            !isEmpty && antiVirusMedicine.map((antiVirus, index) => {
               return (
                 <div key={index} className="content-item">
                   <div className="flex mt-7">
                     <div className="flex1">
-                      <span>药品名称： {antiVirus['drug_Common_Name']}</span>
+                      <span>药品名称： {getText(antiVirus['drug_Common_Name'])}</span>
                     </div>
                     <div className="flex1">
-                      <span>每日剂量： {antiVirus['total_Daily_Dose']}</span>
+                      <span>每日剂量： {getText(antiVirus['total_Daily_Dose'])}</span>
                     </div>
                   </div>
                   <div className="mt-7">
-                    用药时间： {antiVirus['start_Time']} ~ {antiVirus['end_Time']}
+                    用药时间： {getStartEndDate(antiVirus['start_Time'], antiVirus['end_Time'])}
                   </div>
                 </div>
               )
             })
           }
-
         </ItemContent>
       </Item>
     )

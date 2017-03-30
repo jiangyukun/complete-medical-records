@@ -18,7 +18,7 @@ export default function babyBasicInfo(state = defaultValue, action) {
     switch (action.type) {
 
       case baby.FETCH_BASIC_INFO + phase.SUCCESS:
-        nextIState = fromJS(action.result)
+        nextIState = fromJS(action.result || {})
         break
     }
     if (nextIState === iState) {

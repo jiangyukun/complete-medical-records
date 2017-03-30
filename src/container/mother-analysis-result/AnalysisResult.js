@@ -17,10 +17,10 @@ class AnalysisResult extends React.Component {
   }
 
   render() {
-    const hbvDnaList = this.props.analysisResult['hbv_Dna_List']
-    const part2 = this.props.analysisResult['liver_Result_List']
-    const part3 = this.props.analysisResult['check_five_List']
-    const liverBUltrasonic = this.props.analysisResult['liver_B_List']
+    const hbvDnaList = this.props.analysisResult['hbv_Dna_List'] || []
+    const part2 = this.props.analysisResult['liver_Result_List'] || []
+    const part3 = this.props.analysisResult['check_five_List'] || []
+    const liverBUltrasonic = this.props.analysisResult['liver_B_List'] || []
 
     return (
       <div className="content-wrap analysis-result-page">

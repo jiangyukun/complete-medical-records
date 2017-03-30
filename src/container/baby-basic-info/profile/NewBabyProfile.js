@@ -8,7 +8,7 @@ import {getText} from '../../../helper/utils'
 
 class NewBabyProfile extends React.Component {
   render() {
-    const {babyBasicInfo} = this.props
+    const babyBasicInfo = this.props.babyBasicInfo || {}
 
     return (
       <Item>

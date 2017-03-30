@@ -14,7 +14,7 @@ if (process.env.NODE_ENV != 'production') {
 
 export let babyPageStart = 1
 if (process.env.NODE_ENV != 'production') {
-  babyPageStart = 2
+  babyPageStart = 3
 }
 
 let httpToken = ''

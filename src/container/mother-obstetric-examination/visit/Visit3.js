@@ -4,7 +4,7 @@
 import React from 'react'
 
 import {Item, IconNav, ItemContent} from '../../../component/'
-import {check, getStartEndDate} from '../../../helper/utils'
+import {check, getText, getStartEndDate} from '../../../helper/utils'
 
 class Visit3 extends React.Component {
   render() {
@@ -16,7 +16,7 @@ class Visit3 extends React.Component {
         <ItemContent>
           <header className="flex">
             <div className="flex1">访视3 - 分娩</div>
-            <div className="flex1">{visit3['visit_Date'] && visit3['visit_Date']}</div>
+            <div className="flex1">{getText(visit3['visit_Date'])}</div>
           </header>
           <div className="content-item">
             <header>穿刺史</header>
@@ -24,10 +24,10 @@ class Visit3 extends React.Component {
               check.yes(visit3['puncture']) && (
                 <div className="flex">
                   <div className="flex1">
-                    <span>日期： {visit3['puncture_Date']}</span>
+                    <span>日期： {getText(visit3['puncture_Date'])}</span>
                   </div>
                   <div className="flex1">
-                    <span>类型： {visit3['puncture_Type']}</span>
+                    <span>类型： {getText(visit3['puncture_Type'])}</span>
                   </div>
                 </div>
               )
@@ -50,7 +50,7 @@ class Visit3 extends React.Component {
             {
               check.yes(visit3['vaginal_Bleeding']) && (
                 <div className="mt-7">
-                  <span>采取措施： {visit3['vaginal_Bleeding_Measure']}</span>
+                  <span>采取措施： {getText(visit3['vaginal_Bleeding_Measure'])}</span>
                 </div>
               )
             }
@@ -58,10 +58,10 @@ class Visit3 extends React.Component {
               check.yes(visit3['vaginal_Bleeding']) && (
                 <div className="flex mt-7">
                   <div className="flex1">
-                    <span>性质： {visit3['vaginal_Bleeding_Nature']}</span>
+                    <span>性质： {getText(visit3['vaginal_Bleeding_Nature'])}</span>
                   </div>
                   <div className="flex1">
-                    <span>结局： {visit3['vaginal_Bleeding_Final']}</span>
+                    <span>结局： {getText(visit3['vaginal_Bleeding_Final'])}</span>
                   </div>
                 </div>
               )
@@ -78,7 +78,7 @@ class Visit3 extends React.Component {
           <div className="content-item">
             <header>人工流产</header>
             {
-              check.yes(visit3['abortion']) && (<span>末次月经日期： {visit3['puncture_Date']}</span>)
+              check.yes(visit3['abortion']) && (<span>人工流产日期： {getText(visit3['abortion_Date'])}</span>)
             }
             {
               check.no(visit3['abortion']) && (<span>未人工流产</span>)

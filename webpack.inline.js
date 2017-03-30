@@ -11,19 +11,18 @@ module.exports = {
     hot: true,
     inline: true,
     overlay: true,
-    port: 3000
+    port: 3001
   },
   output: {
     path: path.join(__dirname, 'dist'),
     filename: 'bundle.js',
-    publicPath: 'http://192.168.18.148:3000/static/',
+    publicPath: 'http://192.168.18.148:3001/static/',
     chunkFilename: '[name].[chunkhash:5].chunk.js'
   },
   plugins: [
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': '"inline"'
     }),
-    // new webpack.HotModuleReplacementPlugin(),
     new webpack.NoEmitOnErrorsPlugin()
   ],
   module: {

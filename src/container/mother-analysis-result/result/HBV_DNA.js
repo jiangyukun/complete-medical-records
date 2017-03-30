@@ -17,8 +17,9 @@ class HBV_DNA extends React.Component {
   }
 
   render() {
-    const {hbvDnaList} = this.props
-    const lineChartData = hbvDnaList.map(item => ({
+    const hbvDnaList = this.props.hbvDnaList || []
+    const listReverse = hbvDnaList.map(item => item).reverse()
+    const lineChartData = listReverse.map(item => ({
       periodName: item['pregnancy_States'],
       date: item['check_Liver_HBV_DNA_Date'],
       value: item['liver_HBV_DNA_Result'] || ''

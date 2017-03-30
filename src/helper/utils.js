@@ -86,5 +86,8 @@ export function getStartEndDate(startDate, endDate) {
   if (!startDate && !endDate) {
     return '未知'
   }
+  if (startDate && !endDate) {
+    return (startDate || '未知') + ' ~ 至今'
+  }
   return (startDate || '未知') + ' ~ ' + (endDate || '未知')
 }

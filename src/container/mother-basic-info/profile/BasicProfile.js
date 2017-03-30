@@ -9,7 +9,7 @@ import {getText} from '../../../helper/utils'
 class BasicProfile extends React.Component {
 
   render() {
-    const motherBasicInfo = this.props.motherBasicInfo
+    const motherBasicInfo = this.props.motherBasicInfo || {}
     const baseInfo = motherBasicInfo['baseInfo'] || {}
     return (
       <Item>
