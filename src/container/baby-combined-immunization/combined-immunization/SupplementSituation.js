@@ -23,7 +23,7 @@ class SupplementSituation extends React.Component {
             supplementSituation.map((item, index) => {
               return (
                 <div key={index} className="content-item">
-                  <div className="mt-7">
+                  <div>
                     {item['inoculated_Vero'] == 'HBV' ? '乙肝疫苗接种时间' : 'HBIG接种时间'}：{getText(item['inoculated_Day'])}
                   </div>
                   <div className="flex mt-7">

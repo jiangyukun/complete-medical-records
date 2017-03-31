@@ -19,7 +19,7 @@ class FirstDose extends React.Component {
             check.yes(firstDose['inoculated_HBV_Vaccine']) && (
               <div className="content-item">
                 <div className="mt-7">
-                  乙肝疫苗接种时间：{getText(firstDose['inoculated_HBIG_Day'])}
+                  乙肝疫苗接种时间：{getText(firstDose['inoculated_HBV_Day'])}
                 </div>
                 <div className="flex mt-7">
                   <div className="flex1">
@@ -44,7 +44,7 @@ class FirstDose extends React.Component {
                     <span>未接种原因：</span>
                   </div>
                   <div className="flex1">
-                    <span>不知道要接种</span>
+                    <span>{getText(firstDose['not_Inoculated_HBV_Reason'])}</span>
                   </div>
                 </div>
               </div>
@@ -55,17 +55,13 @@ class FirstDose extends React.Component {
               <div className="content-item">无第一针乙肝疫苗接种记录</div>
             )
           }
-          <div className="content-item">
-            {
-              check.yes(firstDose['inoculated_HBIG_Vaccine']) && (
-                <div className="flex mt-7">
-                  <div className="flex1">HBIG接种时间：</div>
-                  <div className="flex1">{getText(firstDose['inoculated_HBIG_Day'])}</div>
+
+          {
+            check.yes(firstDose['inoculated_HBIG_Vaccine']) && (
+              <div className="content-item">
+                <div className="mt-7">
+                  HBIG接种时间：{getText(firstDose['inoculated_HBIG_Day'])}
                 </div>
-              )
-            }
-            {
-              check.yes(firstDose['inoculated_HBIG_Vaccine']) && (
                 <div className="flex mt-7">
                   <div className="flex1">
                     <span>接种剂量：{getText(firstDose['inoculated_HBIG_Dose'])}</span>
@@ -74,14 +70,27 @@ class FirstDose extends React.Component {
                     <span>接种部位：{getText(firstDose['inoculated_HBIG_Place'])}</span>
                   </div>
                 </div>
-              )
-            }
-            {
-              check.empty(firstDose['inoculated_HBIG_Vaccine']) && (
+              </div>
+            )
+          }
+          {
+            check.empty(firstDose['inoculated_HBIG_Vaccine']) && (
+              <div className="content-item">
                 <div className="mt-7">无第一针HBIG接种记录</div>
-              )
-            }
-          </div>
+              </div>
+            )
+          }
+          {
+            check.no(firstDose['inoculated_HBIG_Vaccine']) && (
+              <div className="content-item">
+                <div className="flex">
+                  <div className="flex1">HBIG接种时间：</div>
+                  <div className="flex1">未接种</div>
+                </div>
+                <div className="mt-7">未接种原因：{getText(firstDose['not_Inoculated_HBIG_Reason'])}</div>
+              </div>
+            )
+          }
         </ItemContent>
       </Item>
     )

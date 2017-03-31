@@ -28,7 +28,7 @@ class LiverProtectionMedicine extends React.Component {
               return (
                 <div key={index} className="content-item">
                   <div>药品名称： {getText(liverProtection['drug_Common_Name'])}</div>
-                  <div className="flex mt-7">
+                  <div className="flex">
                     <div className="flex1">
                       <span>给药途径： {getText(liverProtection['provided_Drug_Way'])}</span>
                     </div>

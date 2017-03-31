@@ -35,14 +35,17 @@ class ThirdDose extends React.Component {
           {
             check.no(thirdDose['inoculated_HBV_Vaccine']) && (
               <div className="content-item">
-                无第三针乙肝疫苗接种记录
+                <div>乙肝疫苗接种时间：{getText(thirdDose['inoculated_HBV_Day'])}</div>
+                <div className="mt-7">
+                  <div>未接种原因：{getText(thirdDose['not_Inoculated_HBV_Reason'])}</div>
+                </div>
               </div>
             )
           }
           {
             check.empty(thirdDose['inoculated_HBV_Vaccine']) && (
               <div className="content-item">
-                暂无记录
+                无第三针乙肝疫苗接种记录
               </div>
             )
           }

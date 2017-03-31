@@ -5,6 +5,7 @@ import React from 'react'
 
 import {Item, IconNav, ItemContent} from '../../../component/'
 import VerticalLine from '../../../component/VerticalLine'
+import {getText} from '../../../helper/utils'
 
 class Liver_B_Ultrasonic extends React.Component {
   render() {
@@ -32,10 +33,10 @@ class Liver_B_Ultrasonic extends React.Component {
                 return (
                   <div key={index} className="content-item">
                     <header className="flex">
-                      <div className="flex1">{item['pregnancy_States']}</div>
-                      <div className="flex1">{item['clinical_Abnormalities']}</div>
+                      <div className="flex1">{getText(item['pregnancy_States'])}</div>
+                      <div className="flex1">{getText(item['clinical_Abnormalities'])}</div>
                     </header>
-                    <div>检查日期：{item['check_Liver_B_Date']}</div>
+                    <div>检查日期：{getText(item['check_Liver_B_Date'])}</div>
                   </div>
                 )
               })

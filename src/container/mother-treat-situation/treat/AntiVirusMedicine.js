@@ -27,7 +27,7 @@ class AntiVirusMedicine extends React.Component {
             !isEmpty && antiVirusMedicine.map((antiVirus, index) => {
               return (
                 <div key={index} className="content-item">
-                  <div className="flex mt-7">
+                  <div className="flex">
                     <div className="flex1">
                       <span>药品名称： {getText(antiVirus['drug_Common_Name'])}</span>
                     </div>

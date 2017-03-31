@@ -18,7 +18,7 @@ class SecondDose extends React.Component {
           {
             check.yes(secondDose['inoculated_HBV_Vaccine']) && (
               <div className="content-item">
-                <div className="mt-7">
+                <div>
                   乙肝疫苗接种时间：{getText(secondDose['inoculated_HBV_Day'])}
                 </div>
                 <div className="flex mt-7">
@@ -35,14 +35,18 @@ class SecondDose extends React.Component {
           {
             check.no(secondDose['inoculated_HBV_Vaccine']) && (
               <div className="content-item">
-                无第二针乙肝疫苗接种记录
+                <div className="flex mt-7">
+                  <div className="flex1">乙肝疫苗接种时间：</div>
+                  <div className="flex1">未接种</div>
+                </div>
+                <div className="mt-7">未接种原因：{getText(secondDose['not_Inoculated_HBV_Reason'])}</div>
               </div>
             )
           }
           {
             check.empty(secondDose['inoculated_HBV_Vaccine']) && (
               <div className="content-item">
-                暂无记录
+                无第二针乙肝疫苗接种记录
               </div>
             )
           }

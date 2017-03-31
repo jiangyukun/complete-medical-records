@@ -6,6 +6,7 @@ import React from 'react'
 import LineChartDialog from '../../line-chart/LineChartDialog'
 import {Item, IconNav, ItemContent} from '../../../component/'
 import VerticalLine from '../../../component/VerticalLine'
+import {getText} from '../../../helper/utils'
 
 class Baby_HBV_DNA extends React.Component {
   state = {
@@ -53,11 +54,11 @@ class Baby_HBV_DNA extends React.Component {
               return (
                 <div key={index} className="content-item">
                   <header className="flex">
-                    <div className="flex1">{hbvDna['week_Of_Age']}</div>
-                    <div className="flex1">{hbvDna['baby_Liver_HBV_DNA_Result']}</div>
+                    <div className="flex1">{getText(hbvDna['week_Of_Age'])}</div>
+                    <div className="flex1">{getText(hbvDna['baby_Liver_HBV_DNA_Result'])}</div>
                   </header>
                   <div className="check-date">
-                    <span>检查日期：{hbvDna['babay_Check_Liver_HBV_DNA_Date']}</span>
+                    <span>检查日期：{getText(hbvDna['babay_Check_Liver_HBV_DNA_Date'])}</span>
                   </div>
                 </div>
               )

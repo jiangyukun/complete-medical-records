@@ -4,6 +4,7 @@
 import React from 'react'
 
 import {TableList, Head, Row, Desc, Item} from '../../../component/table-list/'
+import {getText} from '../../../helper/utils'
 
 class Part3 extends React.Component {
 
@@ -47,7 +48,7 @@ class Part3 extends React.Component {
                         }
                         {
                           item[key] != '阴性' && item[key] != '阳性' && (
-                            <span>{item[key]}</span>
+                            <span>{getText(item[key])}</span>
                           )
                         }
                       </Item>

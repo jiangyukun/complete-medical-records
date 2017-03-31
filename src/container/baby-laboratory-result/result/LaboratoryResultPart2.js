@@ -4,6 +4,7 @@
 import React from 'react'
 
 import {TableList, Head, Row, Desc, Item} from '../../../component/table-list/'
+import {getText} from '../../../helper/utils'
 
 class LaboratoryResultPart2 extends React.Component {
 
@@ -29,8 +30,8 @@ class LaboratoryResultPart2 extends React.Component {
             return (
               <Row key={index}>
                 <Desc>
-                  <div className="period-name-desc">{item['week_Of_Age']}</div>
-                  <div className="period-time">{item['check_Date']}</div>
+                  <div className="period-name-desc">{getText(item['week_Of_Age'])}</div>
+                  <div className="period-time">{getText(item['check_Date'])}</div>
                 </Desc>
                 {
                   ['hbsAg_Result', 'hbsAb_Result', 'hbeAg_Result', 'hbeAb_Result', 'hbcAb_Result'].map(key => {
@@ -48,7 +49,7 @@ class LaboratoryResultPart2 extends React.Component {
                         }
                         {
                           item[key] != '阴性' && item[key] != '阳性' && (
-                            <span>{item[key]}</span>
+                            <span>{getText(item[key])}</span>
                           )
                         }
                       </Item>

@@ -1,5 +1,7 @@
-const path = require('path')
-const webpack = require('webpack')
+let path = require('path')
+let webpack = require('webpack')
+
+const ipAddress = '192.168.18.204'
 
 module.exports = {
   // devtool: 'cheap-module-eval-source-map',
@@ -7,7 +9,7 @@ module.exports = {
     './src/index.js'
   ],
   devServer: {
-    host: '192.168.18.148',
+    host: ipAddress,
     hot: true,
     inline: true,
     overlay: true,
@@ -16,7 +18,7 @@ module.exports = {
   output: {
     path: path.join(__dirname, 'dist'),
     filename: 'bundle.js',
-    publicPath: 'http://192.168.18.148:3001/static/',
+    publicPath: `http://${ipAddress}:3001/static/`,
     chunkFilename: '[name].[chunkhash:5].chunk.js'
   },
   plugins: [
