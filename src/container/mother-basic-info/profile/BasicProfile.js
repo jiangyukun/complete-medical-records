@@ -28,6 +28,9 @@ class BasicProfile extends React.Component {
             <div className="mt-7">
               <span>出生日期：{getText(baseInfo['birth_Date'])}</span>
             </div>
+            <div className="mt-7">
+              <span>患者编号：{baseInfo['patient_Code'] || '尚未生成编号'}</span>
+            </div>
           </div>
         </ItemContent>
       </Item>

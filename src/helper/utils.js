@@ -50,7 +50,7 @@ export function urlParams(url) {
 
 // 数据展示形式
 export function getText(value) {
-  if (value == undefined) {
+  if (!value || value.trim() == '') {
     return '未知'
   }
   return value
